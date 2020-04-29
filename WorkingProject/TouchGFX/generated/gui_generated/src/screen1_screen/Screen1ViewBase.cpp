@@ -3,9 +3,11 @@
 /*********************************************************************************/
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 #include "BitmapDatabase.hpp"
 
-Screen1ViewBase::Screen1ViewBase()
+Screen1ViewBase::Screen1ViewBase() :
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
 {
 
     boxWithBorder1.setPosition(0, 0, 480, 272);
@@ -13,14 +15,55 @@ Screen1ViewBase::Screen1ViewBase()
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(5);
 
-    toggleButton1.setXY(176, 117);
-    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
+    digitalClock1.setPosition(350, 237, 119, 23);
+    digitalClock1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    digitalClock1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID1));
+    digitalClock1.displayLeadingZeroForHourIndicator(true);
+    digitalClock1.setDisplayMode(touchgfx::DigitalClock::DISPLAY_12_HOUR);
+    digitalClock1.setTime12Hour(10, 10, 0, true);
+
+    textArea1.setXY(149, 31);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID2));
+
+    textArea2.setXY(42, 74);
+    textArea2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
+
+    textArea3.setXY(363, 217);
+    textArea3.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
+
+    Start.setXY(155, 118);
+    Start.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    Start.setLabelText(touchgfx::TypedText(T_SINGLEUSEID5));
+    Start.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    Start.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    Start.setAction(buttonCallback);
 
     add(boxWithBorder1);
-    add(toggleButton1);
+    add(digitalClock1);
+    add(textArea1);
+    add(textArea2);
+    add(textArea3);
+    add(Start);
 }
 
 void Screen1ViewBase::setupScreen()
 {
 
+}
+
+void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &Start)
+    {
+        //SwitchToStartupCountdown
+        //When Start clicked change screen to Screen3
+        //Go to Screen3 with screen transition towards South
+        application().gotoScreen3ScreenCoverTransitionSouth();
+    }
 }
