@@ -27,6 +27,15 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::TYPOGRAPHY_02:
         // gadugib_100_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);
+    case Typography::TYPOGRAPHY_03:
+        // gadugib_19_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[6]);
+    case Typography::TYPOGRAPHY_04:
+        // gadugib_58_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
+    case Typography::TYPOGRAPHY_05:
+        // gadugib_20_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
     default:
         return 0;
     }

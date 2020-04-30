@@ -11,8 +11,6 @@
 #include<platform/driver/lcd/LCD24bpp.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
-#include <gui/screen2_screen/Screen2View.hpp>
-#include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <gui/screen3_screen/Screen3View.hpp>
 #include <gui/screen3_screen/Screen3Presenter.hpp>
 #include <gui/chargingscreen_screen/ChargingScreenView.hpp>
@@ -46,17 +44,6 @@ void FrontendApplicationBase::gotoScreen1ScreenNoTransition()
 void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-void FrontendApplicationBase::gotoScreen1ScreenCoverTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen1ScreenCoverTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoScreen1ScreenCoverTransitionEastImpl()
-{
-    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 void FrontendApplicationBase::gotoScreen1ScreenCoverTransitionNorth()

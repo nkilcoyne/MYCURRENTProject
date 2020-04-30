@@ -9,8 +9,8 @@
 #include <gui/screen3_screen/Screen3Presenter.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
-#include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
-#include <touchgfx/widgets/canvas/PainterRGB888Bitmap.hpp>
+#include <touchgfx/containers/progress_indicators/BoxProgress.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class Screen3ViewBase : public touchgfx::View<Screen3Presenter>
 {
@@ -28,9 +28,11 @@ protected:
      * Member Declarations
      */
     touchgfx::BoxWithBorder boxWithBorder1;
-    touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > > StopEngine;
-    touchgfx::CircleProgress RPMs;
-    touchgfx::PainterRGB888Bitmap RPMsPainter;
+    touchgfx::IconButtonStyle< touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > > > StopEngine;
+    touchgfx::BoxProgress boxProgress1;
+    touchgfx::BoxWithBorder boxWithBorder1_1;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea2;
 
 private:
 
@@ -44,11 +46,6 @@ private:
      */
     void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
-    /*
-     * Canvas Buffer Size
-     */
-    static const uint16_t CANVAS_BUFFER_SIZE = 7200;
-    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 };
 
 #endif // SCREEN3VIEWBASE_HPP

@@ -6,6 +6,16 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include "BitmapDatabase.hpp"
 
+#include "stm32f7xx_hal.h" //this interacts with hardware -> hal = hardware abstraction layer
+
+/*
+ * To make Reset light come on:
+ * #include "stm32f7xx_hal.h"
+ * Put this inside the branch for the button functions:
+ * HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET);
+ */
+
+
 Screen1ViewBase::Screen1ViewBase() :
     buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
 {
@@ -22,12 +32,12 @@ Screen1ViewBase::Screen1ViewBase() :
     digitalClock1.setDisplayMode(touchgfx::DigitalClock::DISPLAY_12_HOUR);
     digitalClock1.setTime12Hour(10, 10, 0, true);
 
-    textArea1.setXY(149, 31);
+    textArea1.setXY(131, 34);
     textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID2));
 
-    textArea2.setXY(42, 74);
+    textArea2.setXY(79, 77);
     textArea2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
@@ -37,8 +47,8 @@ Screen1ViewBase::Screen1ViewBase() :
     textArea3.setLinespacing(0);
     textArea3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
 
-    Start.setXY(155, 118);
-    Start.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    Start.setXY(125, 120);
+    Start.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_SQUARE_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_SQUARE_MEDIUM_PRESSED_ID));
     Start.setLabelText(touchgfx::TypedText(T_SINGLEUSEID5));
     Start.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     Start.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -64,6 +74,7 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //SwitchToStartupCountdown
         //When Start clicked change screen to Screen3
         //Go to Screen3 with screen transition towards South
+    	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET);
         application().gotoScreen3ScreenCoverTransitionSouth();
     }
 }

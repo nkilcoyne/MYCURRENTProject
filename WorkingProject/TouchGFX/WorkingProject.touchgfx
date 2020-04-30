@@ -66,9 +66,9 @@
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textArea1",
-            "X": 149,
-            "Y": 31,
-            "Width": 183,
+            "X": 131,
+            "Y": 34,
+            "Width": 219,
             "Height": 27,
             "Type": "TextArea",
             "Visible": true,
@@ -89,10 +89,10 @@
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textArea2",
-            "X": 42,
-            "Y": 74,
-            "Width": 397,
-            "Height": 27,
+            "X": 79,
+            "Y": 77,
+            "Width": 322,
+            "Height": 26,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -124,8 +124,8 @@
             "Moveable": false
           },
           {
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "Pressed": "__designer\\Dark_Buttons_Square_medium_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Square_medium.png",
             "Alpha": 255,
             "TextId": "SingleUseId5",
             "ReleasedColor": {
@@ -139,11 +139,10 @@
               "Blue": 255
             },
             "TextRotation": "0",
-            "Style": "Style4",
             "Name": "Start",
-            "X": 155,
-            "Y": 118,
-            "Width": 170,
+            "X": 125,
+            "Y": 120,
+            "Width": 230,
             "Height": 60,
             "Type": "ButtonWithLabel",
             "Visible": true,
@@ -177,9 +176,9 @@
         "Components": [
           {
             "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
+              "Red": 153,
+              "Green": 153,
+              "Blue": 153
             },
             "BorderColor": {
               "Red": 0,
@@ -201,212 +200,23 @@
             "Moveable": false
           },
           {
-            "FileNameProgress": "__designer\\Blue_ProgressIndicators_fill_large_circle_indicator_fill_full.png",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "CenterX": 92,
-            "CenterY": 92,
-            "Radius": 90,
-            "LineWidth": 0,
-            "StartAngle": 0,
-            "EndAngle": 360,
-            "CapPrecision": "Butt",
-            "Alpha": 255,
-            "Style": "Style9",
-            "FileNameBackground": "__designer\\Blue_ProgressIndicators_bg_large_circle_indicator_bg_full.png",
-            "IndicatorPositionX": 0,
-            "IndicatorPositionY": 0,
-            "IndicatorPositionWidth": 0,
-            "IndicatorPositionHeight": 0,
-            "ProgressRangeMin": 0,
-            "ProgressRangeMax": 104,
-            "ProgressRangeSteps": 0,
-            "ProgressRangeStepsMin": 0,
-            "ProgressInitialValue": 60,
-            "Name": "Countdown",
-            "X": 148,
-            "Y": 44,
-            "Width": 184,
-            "Height": 184,
-            "Type": "CircleProgress",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "TextId": "SingleUseId7",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textArea1",
-            "X": 163,
-            "Y": 13,
-            "Width": 154,
-            "Height": 20,
-            "Type": "TextArea",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "Alpha": 255,
             "ButtonTrigger": {
               "Type": "ClickButtonTrigger"
             },
             "ButtonStyles": [
               {
-                "Type": "TextButtonStyle",
-                "X": 0,
-                "Y": 14,
-                "TextId": "SingleUseId8",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
-                },
-                "ColorPressed": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                }
-              },
-              {
-                "Type": "BoxWithBorderButtonStyle",
+                "Type": "IconButtonStyle",
                 "X": 0,
                 "Y": 0,
-                "Width": 50,
-                "Height": 50,
-                "LockToFlexButtonSize": true,
-                "BorderSize": 5,
-                "ColorReleased": {
-                  "Red": 255,
-                  "Green": 0,
-                  "Blue": 0
-                },
-                "ColorPressed": {
-                  "Red": 75,
-                  "Green": 0,
-                  "Blue": 0
-                },
-                "ColorBorderReleased": {
-                  "Red": 37,
-                  "Green": 37,
-                  "Blue": 37
-                },
-                "ColorBorderPressed": {
-                  "Red": 253,
-                  "Green": 252,
-                  "Blue": 252
-                }
-              }
-            ],
-            "Name": "CancelStartup",
-            "X": 420,
-            "Y": 212,
-            "Width": 50,
-            "Height": 50,
-            "Type": "FlexButton",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "TextId": "SingleUseId9",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textArea2",
-            "X": 212,
-            "Y": 64,
-            "Width": 57,
-            "Height": 134,
-            "Type": "TextArea",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "Interaction1",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "TriggerComponent": "CancelStartup",
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Screen1",
-              "Type": "ActionGotoScreen"
-            }
-          }
-        ],
-        "Name": "Screen2",
-        "OverrideDefaultBufferSize": false,
-        "CanvasBufferSize": 7200
-      },
-      {
-        "Components": [
-          {
-            "Color": {
-              "Red": 122,
-              "Green": 122,
-              "Blue": 122
-            },
-            "BorderColor": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
-            "BorderSize": 5,
-            "Alpha": 255,
-            "Name": "boxWithBorder1",
-            "X": 0,
-            "Y": 0,
-            "Width": 480,
-            "Height": 272,
-            "Type": "BoxWithBorder",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Alpha": 255,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
+                "Style": "Icon47",
+                "IconReleased": "__designer\\Blue_Icons_Power_32.png",
+                "IconPressed": "__designer\\Blue_Icons_Power_32.png"
+              },
               {
                 "Type": "TextButtonStyle",
                 "X": 0,
-                "Y": 8,
+                "Y": 3,
                 "TextId": "SingleUseId10",
                 "TextRotation": "0",
                 "ColorReleased": {
@@ -427,7 +237,7 @@
                 "Width": 56,
                 "Height": 48,
                 "LockToFlexButtonSize": true,
-                "BorderSize": 5,
+                "BorderSize": 4,
                 "ColorReleased": {
                   "Red": 255,
                   "Green": 0,
@@ -452,7 +262,7 @@
             ],
             "Name": "StopEngine",
             "X": 414,
-            "Y": 9,
+            "Y": 8,
             "Width": 56,
             "Height": 48,
             "Type": "FlexButton",
@@ -463,37 +273,101 @@
             "Moveable": false
           },
           {
-            "FileNameProgress": "__designer\\Blue_ProgressIndicators_fill_medium_circle_indicator_fill_full.png",
             "Color": {
-              "Red": 255,
-              "Green": 255,
+              "Red": 0,
+              "Green": 151,
               "Blue": 255
             },
-            "CenterX": 52,
-            "CenterY": 52,
-            "Radius": 50,
-            "LineWidth": 0,
-            "StartAngle": 0,
-            "EndAngle": 360,
-            "CapPrecision": "Butt",
+            "Direction": "Right",
             "Alpha": 255,
-            "Style": "Style5",
-            "FileNameBackground": "__designer\\Blue_ProgressIndicators_bg_medium_circle_indicator_bg_full.png",
-            "IndicatorPositionX": 0,
-            "IndicatorPositionY": 0,
-            "IndicatorPositionWidth": 0,
-            "IndicatorPositionHeight": 0,
+            "Style": "Style1",
+            "FileNameBackground": "__designer\\Blue_ProgressIndicators_bg_small_progress_indicator_bg_square_0_degrees.png",
+            "IndicatorPositionX": 2,
+            "IndicatorPositionY": 2,
+            "IndicatorPositionWidth": 100,
+            "IndicatorPositionHeight": 10,
             "ProgressRangeMin": 0,
             "ProgressRangeMax": 100,
             "ProgressRangeSteps": 0,
             "ProgressRangeStepsMin": 0,
             "ProgressInitialValue": 60,
-            "Name": "RPMs",
-            "X": 188,
-            "Y": 147,
+            "Name": "boxProgress1",
+            "X": 10,
+            "Y": 20,
             "Width": 104,
-            "Height": 104,
-            "Type": "CircleProgress",
+            "Height": 14,
+            "Type": "BoxProgress",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxWithBorder1_1",
+            "X": 166,
+            "Y": 0,
+            "Width": 148,
+            "Height": 77,
+            "Type": "BoxWithBorder",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId13",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 224,
+            "Y": -5,
+            "Width": 33,
+            "Height": 78,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId14",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea2",
+            "X": 256,
+            "Y": 32,
+            "Width": 43,
+            "Height": 27,
+            "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -519,7 +393,7 @@
         ],
         "Name": "Screen3",
         "OverrideDefaultBufferSize": false,
-        "CanvasBufferSize": 7200
+        "CanvasBufferSize": 0
       },
       {
         "Components": [
@@ -652,15 +526,7 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId7",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId8",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId9",
         "IsResource": false
       },
       {
@@ -673,6 +539,14 @@
       },
       {
         "TextEntryId": "SingleUseId12",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId13",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId14",
         "IsResource": false
       }
     ],

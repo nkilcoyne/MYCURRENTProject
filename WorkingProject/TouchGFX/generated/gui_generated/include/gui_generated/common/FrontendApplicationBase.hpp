@@ -18,8 +18,6 @@ public:
     // Screen1
     void gotoScreen1ScreenNoTransition();
 
-    void gotoScreen1ScreenCoverTransitionEast();
-
     void gotoScreen1ScreenCoverTransitionNorth();
 
     // Screen3
@@ -32,8 +30,6 @@ protected:
 
     // Screen1
     void gotoScreen1ScreenNoTransitionImpl();
-
-    void gotoScreen1ScreenCoverTransitionEastImpl();
 
     void gotoScreen1ScreenCoverTransitionNorthImpl();
 

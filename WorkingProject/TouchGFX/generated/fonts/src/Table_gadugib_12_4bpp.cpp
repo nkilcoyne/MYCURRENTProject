@@ -10,15 +10,13 @@ KEEP extern const touchgfx::GlyphNode glyphs_gadugib_12_4bpp[] FONT_TABLE_LOCATI
     {    56, 0x0045,   5,   8,   8,   1,   6,   0,   0, 0x00 },
     {    80, 0x004F,   9,   8,   8,   0,   9,   0,   0, 0x00 },
     {   120, 0x0050,   7,   8,   8,   1,   7,   0,   0, 0x00 },
-    {   152, 0x0053,   7,   8,   8,   0,   7,   0,   0, 0x00 },
-    {   184, 0x0054,   7,   8,   8,   0,   7,   0,   0, 0x00 },
-    {   216, 0x0061,   6,   6,   6,   0,   6,   0,   0, 0x00 },
-    {   234, 0x0063,   6,   6,   6,   0,   6,   0,   1, 0x00 },
-    {   252, 0x0065,   7,   6,   6,   0,   7,   1,   1, 0x00 },
-    {   276, 0x0067,   7,   9,   6,   0,   7,   2,   1, 0x00 },
-    {   312, 0x0069,   3,   9,   9,   0,   3,   0,   0, 0x00 },
-    {   330, 0x006C,   3,   9,   9,   0,   3,   0,   0, 0x00 },
-    {   348, 0x006E,   7,   6,   6,   0,   7,   0,   0, 0x00 }
+    {   152, 0x0052,   7,   8,   8,   1,   8,   0,   0, 0x00 },
+    {   184, 0x0057,  12,   8,   8,   0,  12,   0,   0, 0x00 },
+    {   232, 0x0061,   6,   6,   6,   0,   6,   0,   0, 0x00 },
+    {   250, 0x0063,   6,   6,   6,   0,   6,   0,   0, 0x00 },
+    {   268, 0x0065,   7,   6,   6,   0,   7,   0,   0, 0x00 },
+    {   292, 0x006C,   3,   9,   9,   0,   3,   0,   0, 0x00 },
+    {   310, 0x006E,   7,   6,   6,   0,   7,   0,   0, 0x00 }
 };
 
 // gadugib_12_4bpp
@@ -33,6 +31,6 @@ touchgfx::GeneratedFont& getFont_gadugib_12_4bpp();
 
 touchgfx::GeneratedFont& getFont_gadugib_12_4bpp()
 {
-    static touchgfx::GeneratedFont gadugib_12_4bpp(glyphs_gadugib_12_4bpp, 14, 12, 3, 4, 1, 0, 1, unicodes_gadugib_12_4bpp, kerning_gadugib_12_4bpp, 63, 0, 0);
+    static touchgfx::GeneratedFont gadugib_12_4bpp(glyphs_gadugib_12_4bpp, 12, 12, 0, 4, 1, 0, 1, unicodes_gadugib_12_4bpp, kerning_gadugib_12_4bpp, 63, 0, 0);
     return gadugib_12_4bpp;
 }

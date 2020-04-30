@@ -14,6 +14,9 @@ struct Typography
     static const touchgfx::FontId TYPOGRAPHY_00 = 3;
     static const touchgfx::FontId TYPOGRAPHY_01 = 4;
     static const touchgfx::FontId TYPOGRAPHY_02 = 5;
+    static const touchgfx::FontId TYPOGRAPHY_03 = 6;
+    static const touchgfx::FontId TYPOGRAPHY_04 = 7;
+    static const touchgfx::FontId TYPOGRAPHY_05 = 8;
 };
 
 struct TypographyFontIndex
@@ -24,7 +27,10 @@ struct TypographyFontIndex
     static const touchgfx::FontId TYPOGRAPHY_00 = 3; // gadugib_15_4bpp
     static const touchgfx::FontId TYPOGRAPHY_01 = 4; // gadugib_12_4bpp
     static const touchgfx::FontId TYPOGRAPHY_02 = 5; // gadugib_100_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 6;
+    static const touchgfx::FontId TYPOGRAPHY_03 = 6; // gadugib_19_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_04 = 7; // gadugib_58_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_05 = 0; // gadugib_20_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 8;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

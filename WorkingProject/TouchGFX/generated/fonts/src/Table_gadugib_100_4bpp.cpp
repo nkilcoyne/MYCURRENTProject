@@ -5,8 +5,7 @@
 FONT_TABLE_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::GlyphNode glyphs_gadugib_100_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE =
 {
-    {     0, 0x0033,  46,  72,  71,   5,  58,   0,   0, 0x00 },
-    {  1656, 0x003F,  39,  72,  71,   3,  44,   0,   0, 0x00 }
+    {     0, 0x003F,  39,  72,  71,   3,  44,   0,   0, 0x00 }
 };
 
 // gadugib_100_4bpp
@@ -21,6 +20,6 @@ touchgfx::GeneratedFont& getFont_gadugib_100_4bpp();
 
 touchgfx::GeneratedFont& getFont_gadugib_100_4bpp()
 {
-    static touchgfx::GeneratedFont gadugib_100_4bpp(glyphs_gadugib_100_4bpp, 2, 100, 1, 4, 1, 0, 0, unicodes_gadugib_100_4bpp, kerning_gadugib_100_4bpp, 63, 0, 0);
+    static touchgfx::GeneratedFont gadugib_100_4bpp(glyphs_gadugib_100_4bpp, 1, 100, 1, 4, 1, 0, 0, unicodes_gadugib_100_4bpp, kerning_gadugib_100_4bpp, 63, 0, 0);
     return gadugib_100_4bpp;
 }
