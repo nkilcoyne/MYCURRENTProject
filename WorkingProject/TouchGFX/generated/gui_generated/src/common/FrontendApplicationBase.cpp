@@ -11,8 +11,8 @@
 #include<platform/driver/lcd/LCD24bpp.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
-#include <gui/screen3_screen/Screen3View.hpp>
-#include <gui/screen3_screen/Screen3Presenter.hpp>
+#include <gui/dashboard_screen/DashboardView.hpp>
+#include <gui/dashboard_screen/DashboardPresenter.hpp>
 #include <gui/chargingscreen_screen/ChargingScreenView.hpp>
 #include <gui/chargingscreen_screen/ChargingScreenPresenter.hpp>
 
@@ -57,15 +57,15 @@ void FrontendApplicationBase::gotoScreen1ScreenCoverTransitionNorthImpl()
     touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::CoverTransition<NORTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// Screen3
+// Dashboard
 
-void FrontendApplicationBase::gotoScreen3ScreenCoverTransitionSouth()
+void FrontendApplicationBase::gotoDashboardScreenCoverTransitionSouth()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen3ScreenCoverTransitionSouthImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoDashboardScreenCoverTransitionSouthImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoScreen3ScreenCoverTransitionSouthImpl()
+void FrontendApplicationBase::gotoDashboardScreenCoverTransitionSouthImpl()
 {
-    touchgfx::makeTransition<Screen3View, Screen3Presenter, touchgfx::CoverTransition<SOUTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<DashboardView, DashboardPresenter, touchgfx::CoverTransition<SOUTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

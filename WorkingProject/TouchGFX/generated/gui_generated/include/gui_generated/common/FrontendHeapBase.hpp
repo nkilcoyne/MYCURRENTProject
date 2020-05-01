@@ -16,8 +16,8 @@
 
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
-#include <gui/screen3_screen/Screen3View.hpp>
-#include <gui/screen3_screen/Screen3Presenter.hpp>
+#include <gui/dashboard_screen/DashboardView.hpp>
+#include <gui/dashboard_screen/DashboardPresenter.hpp>
 #include <gui/chargingscreen_screen/ChargingScreenView.hpp>
 #include <gui/chargingscreen_screen/ChargingScreenPresenter.hpp>
 
@@ -43,7 +43,7 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< Screen1View,
-            touchgfx::meta::TypeList< Screen3View,
+            touchgfx::meta::TypeList< DashboardView,
             touchgfx::meta::TypeList< ChargingScreenView,
             touchgfx::meta::Nil > >
             > GeneratedViewTypes;
@@ -58,7 +58,7 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< Screen1Presenter,
-            touchgfx::meta::TypeList< Screen3Presenter,
+            touchgfx::meta::TypeList< DashboardPresenter,
             touchgfx::meta::TypeList< ChargingScreenPresenter,
             touchgfx::meta::Nil > >
             > GeneratedPresenterTypes;

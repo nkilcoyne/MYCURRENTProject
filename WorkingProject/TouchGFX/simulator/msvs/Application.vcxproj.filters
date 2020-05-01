@@ -172,29 +172,29 @@
     <Filter Include="Header Files\generated\gui_generated\common">
       <UniqueIdentifier>41B97A88-A457-1FE7-B331-9BDCC00209F7</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\screen3_screen">
-      <UniqueIdentifier>F3A75DAF-02C5-996C-4C26-B357E1C3B037</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\screen3_screen">
-      <UniqueIdentifier>4D6C93EC-B271-90AF-8042-A06F958038C7</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\chargingscreen_screen">
       <UniqueIdentifier>B230F349-5669-2A1A-9446-0ECFF5DF4F9D</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\chargingscreen_screen">
       <UniqueIdentifier>C5647B4A-5CD9-5E1A-208C-8AA907E51F38</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\screen3_screen">
-      <UniqueIdentifier>0911D874-1210-5FBE-019E-5118E148AD56</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\screen3_screen">
-      <UniqueIdentifier>11074B72-49F7-41E3-F7BB-8BC415756CF7</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\generated\gui_generated\chargingscreen_screen">
       <UniqueIdentifier>E0EFF281-CE4B-E992-64DC-B4F031519C9B</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\chargingscreen_screen">
       <UniqueIdentifier>BD2ABA18-2CC3-A181-C140-8EC30BB98E01</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\dashboard_screen">
+      <UniqueIdentifier>099FA51E-74A1-F838-8409-28C1512306D6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\dashboard_screen">
+      <UniqueIdentifier>C666B023-1270-A071-F471-610CFA5C807C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\dashboard_screen">
+      <UniqueIdentifier>538401CC-87DF-BB08-2579-091F891726C6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\dashboard_screen">
+      <UniqueIdentifier>A3E494D1-E70D-846D-45C8-AED2014ACAE0</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -243,14 +243,14 @@
     <ClCompile Include="..\..\generated\gui_generated\src\chargingscreen_screen\ChargingScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\chargingscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\screen3_screen\Screen3Presenter.cpp">
-      <Filter>Source Files\gui\screen3_screen</Filter>
+    <ClCompile Include="..\..\gui\src\dashboard_screen\DashboardPresenter.cpp">
+      <Filter>Source Files\gui\dashboard_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\screen3_screen\Screen3View.cpp">
-      <Filter>Source Files\gui\screen3_screen</Filter>
+    <ClCompile Include="..\..\gui\src\dashboard_screen\DashboardView.cpp">
+      <Filter>Source Files\gui\dashboard_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\screen3_screen\Screen3ViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\screen3_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\dashboard_screen\DashboardViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\dashboard_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -703,14 +703,14 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\chargingscreen_screen\ChargingScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\chargingscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\screen3_screen\Screen3Presenter.hpp">
-      <Filter>Header Files\gui\screen3_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\dashboard_screen\DashboardPresenter.hpp">
+      <Filter>Header Files\gui\dashboard_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\screen3_screen\Screen3View.hpp">
-      <Filter>Header Files\gui\screen3_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\dashboard_screen\DashboardView.hpp">
+      <Filter>Header Files\gui\dashboard_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen3_screen\Screen3ViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\screen3_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\dashboard_screen\DashboardViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\dashboard_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

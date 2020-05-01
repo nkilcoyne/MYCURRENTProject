@@ -20,8 +20,8 @@ public:
 
     void gotoScreen1ScreenCoverTransitionNorth();
 
-    // Screen3
-    void gotoScreen3ScreenCoverTransitionSouth();
+    // Dashboard
+    void gotoDashboardScreenCoverTransitionSouth();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -33,8 +33,8 @@ protected:
 
     void gotoScreen1ScreenCoverTransitionNorthImpl();
 
-    // Screen3
-    void gotoScreen3ScreenCoverTransitionSouthImpl();
+    // Dashboard
+    void gotoDashboardScreenCoverTransitionSouthImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

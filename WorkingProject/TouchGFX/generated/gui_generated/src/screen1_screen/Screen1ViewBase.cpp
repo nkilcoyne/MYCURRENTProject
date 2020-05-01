@@ -3,21 +3,13 @@
 /*********************************************************************************/
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include "BitmapDatabase.hpp"
-
-#include "stm32f7xx_hal.h" //this interacts with hardware -> hal = hardware abstraction layer
-
-/*
- * To make Reset light come on:
- * #include "stm32f7xx_hal.h"
- * Put this inside the branch for the button functions:
- * HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET);
- */
-
+#include <texts/TextKeysAndLanguages.hpp>
+#include "stm32f7xx_hal.h"
 
 Screen1ViewBase::Screen1ViewBase() :
-    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
+    switchToDashCounter(0),
+    flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
 {
 
     boxWithBorder1.setPosition(0, 0, 480, 272);
@@ -25,41 +17,51 @@ Screen1ViewBase::Screen1ViewBase() :
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(5);
 
-    digitalClock1.setPosition(350, 237, 119, 23);
-    digitalClock1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    digitalClock1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID1));
-    digitalClock1.displayLeadingZeroForHourIndicator(true);
-    digitalClock1.setDisplayMode(touchgfx::DigitalClock::DISPLAY_12_HOUR);
-    digitalClock1.setTime12Hour(10, 10, 0, true);
+    GamecockLogo.setBitmap(touchgfx::Bitmap(BITMAP_GAMECOCKLOGO_ID));
+    GamecockLogo.setPosition(123, 3, 234, 266);
+    GamecockLogo.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    GamecockLogo.setAlpha(15);
 
-    textArea1.setXY(131, 34);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID2));
+    time.setPosition(349, 237, 119, 23);
+    time.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    time.setTypedText(touchgfx::TypedText(T_SINGLEUSEID1));
+    time.displayLeadingZeroForHourIndicator(true);
+    time.setDisplayMode(touchgfx::DigitalClock::DISPLAY_12_HOUR);
+    time.setTime12Hour(10, 10, 0, true);
 
-    textArea2.setXY(79, 77);
-    textArea2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
+    holdFoot.setXY(128, 29);
+    holdFoot.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    holdFoot.setLinespacing(0);
+    holdFoot.setTypedText(touchgfx::TypedText(T_SINGLEUSEID2));
 
-    textArea3.setXY(363, 217);
-    textArea3.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    textArea3.setLinespacing(0);
-    textArea3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
+    TapButton.setXY(101, 76);
+    TapButton.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    TapButton.setLinespacing(0);
+    TapButton.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
 
-    Start.setXY(125, 120);
-    Start.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_SQUARE_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_SQUARE_MEDIUM_PRESSED_ID));
-    Start.setLabelText(touchgfx::TypedText(T_SINGLEUSEID5));
-    Start.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    Start.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    Start.setAction(buttonCallback);
+    TimeLabel.setXY(374, 217);
+    TimeLabel.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    TimeLabel.setLinespacing(0);
+    TimeLabel.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
+
+    flexButton1.setBoxWithBorderPosition(0, 0, 198, 57);
+    flexButton1.setBorderSize(0);
+    flexButton1.setBoxWithBorderColors(touchgfx::Color::getColorFrom24BitRGB(0, 153, 204), touchgfx::Color::getColorFrom24BitRGB(0, 102, 153), touchgfx::Color::getColorFrom24BitRGB(0, 102, 153), touchgfx::Color::getColorFrom24BitRGB(51, 102, 153));
+    flexButton1.setIconBitmaps(Bitmap(BITMAP_BLUE_ICONS_POWER_32_ID), Bitmap(BITMAP_BLUE_ICONS_POWER_32_ID));
+    flexButton1.setIconXY(82, 4);
+    flexButton1.setText(TypedText(T_SINGLEUSEID25));
+    flexButton1.setTextPosition(0, 32, 198, 57);
+    flexButton1.setTextColors(touchgfx::Color::getColorFrom24BitRGB(10, 10, 10), touchgfx::Color::getColorFrom24BitRGB(10, 10, 10));
+    flexButton1.setPosition(141, 125, 198, 57);
+    flexButton1.setAction(flexButtonCallback);
 
     add(boxWithBorder1);
-    add(digitalClock1);
-    add(textArea1);
-    add(textArea2);
-    add(textArea3);
-    add(Start);
+    add(GamecockLogo);
+    add(time);
+    add(holdFoot);
+    add(TapButton);
+    add(TimeLabel);
+    add(flexButton1);
 }
 
 void Screen1ViewBase::setupScreen()
@@ -67,14 +69,30 @@ void Screen1ViewBase::setupScreen()
 
 }
 
-void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+//Handles delays
+void Screen1ViewBase::handleTickEvent()
 {
-    if (&src == &Start)
+    if(switchToDashCounter > 0)
     {
-        //SwitchToStartupCountdown
-        //When Start clicked change screen to Screen3
-        //Go to Screen3 with screen transition towards South
-    	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET);
-        application().gotoScreen3ScreenCoverTransitionSouth();
+        switchToDashCounter--;
+        if(switchToDashCounter == 0)
+        {
+            //GoToDash
+            //When SwitchToDash completed change screen to Dashboard
+            //Go to Dashboard with screen transition towards South
+            application().gotoDashboardScreenCoverTransitionSouth();
+        }
+    }
+}
+
+void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &flexButton1)
+    {
+        //SwitchToDash
+        //When flexButton1 clicked delay
+        //Delay for 3000 ms (180 Ticks)
+    	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET); //makes reset light go on
+        switchToDashCounter = SWITCHTODASH_DURATION;
     }
 }

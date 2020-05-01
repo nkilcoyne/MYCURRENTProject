@@ -8,9 +8,10 @@
 #include <mvp/View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -18,6 +19,7 @@ public:
     Screen1ViewBase();
     virtual ~Screen1ViewBase() {}
     virtual void setupScreen();
+    virtual void handleTickEvent();
 
 protected:
     FrontendApplication& application() {
@@ -28,23 +30,30 @@ protected:
      * Member Declarations
      */
     touchgfx::BoxWithBorder boxWithBorder1;
-    touchgfx::DigitalClock digitalClock1;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea3;
-    touchgfx::ButtonWithLabel Start;
+    touchgfx::ScalableImage GamecockLogo;
+    touchgfx::DigitalClock time;
+    touchgfx::TextArea holdFoot;
+    touchgfx::TextArea TapButton;
+    touchgfx::TextArea TimeLabel;
+    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger > > > flexButton1;
 
 private:
 
     /*
+     * Delay Variable Declarations
+     */
+    static const uint16_t SWITCHTODASH_DURATION = 180;
+    uint16_t switchToDashCounter;
+
+    /*
      * Callback Declarations
      */
-    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
     /*
      * Callback Handler Declarations
      */
-    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 
