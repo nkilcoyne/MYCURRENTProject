@@ -8,6 +8,7 @@
 
 Screen1ViewBase::Screen1ViewBase() :
     switchToDashCounter(0),
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler),
     flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
 {
 
@@ -54,6 +55,13 @@ Screen1ViewBase::Screen1ViewBase() :
     flexButton1.setPosition(141, 125, 198, 57);
     flexButton1.setAction(flexButtonCallback);
 
+    buttonWithLabel1.setXY(10, 200);
+    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonWithLabel1.setLabelText(touchgfx::TypedText(T_SINGLEUSEID37));
+    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    buttonWithLabel1.setAction(buttonCallback);
+
     add(boxWithBorder1);
     add(GamecockLogo);
     add(time);
@@ -61,6 +69,7 @@ Screen1ViewBase::Screen1ViewBase() :
     add(TapButton);
     add(TimeLabel);
     add(flexButton1);
+    add(buttonWithLabel1);
 }
 
 void Screen1ViewBase::setupScreen()
@@ -81,6 +90,17 @@ void Screen1ViewBase::handleTickEvent()
             //Go to Dashboard with screen transition towards South
             application().gotoDashboardScreenCoverTransitionSouth();
         }
+    }
+}
+
+void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttonWithLabel1)
+    {
+        //Interaction1
+        //When buttonWithLabel1 clicked change screen to ChargingScreen
+        //Go to ChargingScreen with no screen transition
+        application().gotoChargingScreenScreenNoTransition();
     }
 }
 

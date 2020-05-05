@@ -24,6 +24,8 @@ struct Typography
     static const touchgfx::FontId TYPOGRAPHY_10 = 13;
     static const touchgfx::FontId TYPOGRAPHY_11 = 14;
     static const touchgfx::FontId TYPOGRAPHY_12 = 15;
+    static const touchgfx::FontId TYPOGRAPHY_13 = 16;
+    static const touchgfx::FontId TYPOGRAPHY_14 = 17;
 };
 
 struct TypographyFontIndex
@@ -44,7 +46,9 @@ struct TypographyFontIndex
     static const touchgfx::FontId TYPOGRAPHY_10 = 11; // malgunbd_18_4bpp
     static const touchgfx::FontId TYPOGRAPHY_11 = 7; // malgunbd_13_4bpp
     static const touchgfx::FontId TYPOGRAPHY_12 = 12; // malgunbd_24_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 13;
+    static const touchgfx::FontId TYPOGRAPHY_13 = 12; // malgunbd_24_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_14 = 13; // malgunbd_10_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 14;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

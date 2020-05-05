@@ -18,6 +18,7 @@ extern touchgfx::GeneratedFont& getFont_malgunbd_12_4bpp();
 extern touchgfx::GeneratedFont& getFont_malgunbd_22_4bpp();
 extern touchgfx::GeneratedFont& getFont_malgunbd_18_4bpp();
 extern touchgfx::GeneratedFont& getFont_malgunbd_24_4bpp();
+extern touchgfx::GeneratedFont& getFont_malgunbd_10_4bpp();
 
 const touchgfx::Font* _fonts[] =
 {
@@ -33,7 +34,8 @@ const touchgfx::Font* _fonts[] =
     &(getFont_malgunbd_12_4bpp()),
     &(getFont_malgunbd_22_4bpp()),
     &(getFont_malgunbd_18_4bpp()),
-    &(getFont_malgunbd_24_4bpp())
+    &(getFont_malgunbd_24_4bpp()),
+    &(getFont_malgunbd_10_4bpp())
 };
 
 extern const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[];
@@ -47,8 +49,7 @@ const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCAT
     { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 3, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 3, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 12, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 6, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
@@ -66,7 +67,13 @@ const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCAT
     { 11, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 7, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 7, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 12, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }
+    { 12, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 12, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 12, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 12, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 13, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 13, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 13, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR }
 };
 
 TEXT_LOCATION_FLASH_PRAGMA
@@ -141,6 +148,9 @@ void resetFont(touchgfx::FontId fontId)
         break;
     case 12:
         _fonts[12] = &(getFont_malgunbd_24_4bpp());
+        break;
+    case 13:
+        _fonts[13] = &(getFont_malgunbd_10_4bpp());
         break;
     }
 }

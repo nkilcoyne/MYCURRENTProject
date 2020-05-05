@@ -196,6 +196,18 @@
     <Filter Include="Source Files\generated\gui_generated\dashboard_screen">
       <UniqueIdentifier>A3E494D1-E70D-846D-45C8-AED2014ACAE0</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\fullychargedscreen_screen">
+      <UniqueIdentifier>6A2DD7B3-9CF8-EF0B-4A55-24FC01CED85B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\fullychargedscreen_screen">
+      <UniqueIdentifier>2CDC64AC-7634-BAF4-C623-91F95CE0AD1C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\fullychargedscreen_screen">
+      <UniqueIdentifier>2496D1D3-3B7D-B144-EE41-BB7951A2AF69</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\fullychargedscreen_screen">
+      <UniqueIdentifier>AA7993F3-7504-709A-E4F1-24BC221A29C7</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -251,6 +263,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\dashboard_screen\DashboardViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\dashboard_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\fullychargedscreen_screen\FullyChargedScreenPresenter.cpp">
+      <Filter>Source Files\gui\fullychargedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\fullychargedscreen_screen\FullyChargedScreenView.cpp">
+      <Filter>Source Files\gui\fullychargedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\fullychargedscreen_screen\FullyChargedScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\fullychargedscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -711,6 +732,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\dashboard_screen\DashboardViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\dashboard_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\fullychargedscreen_screen\FullyChargedScreenPresenter.hpp">
+      <Filter>Header Files\gui\fullychargedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\fullychargedscreen_screen\FullyChargedScreenView.hpp">
+      <Filter>Header Files\gui\fullychargedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\fullychargedscreen_screen\FullyChargedScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\fullychargedscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

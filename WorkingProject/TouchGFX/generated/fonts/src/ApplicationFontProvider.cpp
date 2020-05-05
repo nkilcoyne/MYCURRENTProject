@@ -57,6 +57,12 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::TYPOGRAPHY_12:
         // malgunbd_24_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[12]);
+    case Typography::TYPOGRAPHY_13:
+        // malgunbd_24_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[12]);
+    case Typography::TYPOGRAPHY_14:
+        // malgunbd_10_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[13]);
     default:
         return 0;
     }

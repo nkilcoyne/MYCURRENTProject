@@ -9,7 +9,10 @@
 #include <mvp/MVPHeap.hpp>
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <touchgfx/transitions/CoverTransition.hpp>
+
 #include <touchgfx/transitions/CoverTransition.hpp>
+
+
 
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
@@ -20,6 +23,8 @@
 #include <gui/dashboard_screen/DashboardPresenter.hpp>
 #include <gui/chargingscreen_screen/ChargingScreenView.hpp>
 #include <gui/chargingscreen_screen/ChargingScreenPresenter.hpp>
+#include <gui/fullychargedscreen_screen/FullyChargedScreenView.hpp>
+#include <gui/fullychargedscreen_screen/FullyChargedScreenPresenter.hpp>
 
 
 /**
@@ -45,7 +50,8 @@ public:
     typedef touchgfx::meta::TypeList< Screen1View,
             touchgfx::meta::TypeList< DashboardView,
             touchgfx::meta::TypeList< ChargingScreenView,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< FullyChargedScreenView,
+            touchgfx::meta::Nil > > >
             > GeneratedViewTypes;
 
     /**
@@ -60,7 +66,8 @@ public:
     typedef touchgfx::meta::TypeList< Screen1Presenter,
             touchgfx::meta::TypeList< DashboardPresenter,
             touchgfx::meta::TypeList< ChargingScreenPresenter,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< FullyChargedScreenPresenter,
+            touchgfx::meta::Nil > > >
             > GeneratedPresenterTypes;
 
     /**

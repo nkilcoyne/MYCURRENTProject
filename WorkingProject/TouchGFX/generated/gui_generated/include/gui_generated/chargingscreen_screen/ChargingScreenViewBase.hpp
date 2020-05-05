@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/progress_indicators/ImageProgress.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class ChargingScreenViewBase : public touchgfx::View<ChargingScreenPresenter>
 {
@@ -29,9 +30,20 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ImageProgress imageProgress1;
     touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea textArea2;
+    touchgfx::ButtonWithLabel buttonWithLabel1;
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<ChargingScreenViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

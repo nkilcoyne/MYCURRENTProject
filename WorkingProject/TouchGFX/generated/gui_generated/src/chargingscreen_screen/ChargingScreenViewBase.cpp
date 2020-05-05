@@ -6,7 +6,8 @@
 #include "BitmapDatabase.hpp"
 #include <texts/TextKeysAndLanguages.hpp>
 
-ChargingScreenViewBase::ChargingScreenViewBase()
+ChargingScreenViewBase::ChargingScreenViewBase() :
+    buttonCallback(this, &ChargingScreenViewBase::buttonCallbackHandler)
 {
 
     boxWithBorder1.setPosition(0, 0, 480, 272);
@@ -14,32 +15,51 @@ ChargingScreenViewBase::ChargingScreenViewBase()
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(5);
 
-    imageProgress1.setXY(148, 126);
-    imageProgress1.setProgressIndicatorPosition(2, 2, 180, 16);
+    imageProgress1.setXY(38, 125);
+    imageProgress1.setProgressIndicatorPosition(2, 2, 400, 30);
     imageProgress1.setRange(0, 100);
     imageProgress1.setDirection(touchgfx::AbstractDirectionProgress::RIGHT);
-    imageProgress1.setBackground(touchgfx::Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_BG_MEDIUM_PROGRESS_INDICATOR_BG_SQUARE_0_DEGREES_ID));
-    imageProgress1.setBitmap(BITMAP_BLUE_PROGRESSINDICATORS_FILL_TILING_PROGRESS_INDICATOR_FILL_STRIPED_NORMAL_HORIZONTAL_ID);
-    imageProgress1.setValue(60);
+    imageProgress1.setBackground(touchgfx::Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_BG_LARGE_PROGRESS_INDICATOR_BG_SQUARE_0_DEGREES_ID));
+    imageProgress1.setBitmap(BITMAP_BLUE_PROGRESSINDICATORS_FILL_TILING_PROGRESS_INDICATOR_FILL_STRIPED_WIDE_HORIZONTAL_ID);
+    imageProgress1.setValue(75);
     imageProgress1.setAnchorAtZero(false);
 
-    textArea1.setXY(180, 98);
+    textArea1.setXY(143, 81);
     textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID11));
 
-    textArea1_1.setXY(153, 165);
-    textArea1_1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    textArea1_1.setLinespacing(0);
-    textArea1_1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID12));
+    textArea2.setXY(216, 168);
+    textArea2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID34));
+
+    buttonWithLabel1.setXY(10, 200);
+    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonWithLabel1.setLabelText(touchgfx::TypedText(T_SINGLEUSEID38));
+    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    buttonWithLabel1.setAction(buttonCallback);
 
     add(boxWithBorder1);
     add(imageProgress1);
     add(textArea1);
-    add(textArea1_1);
+    add(textArea2);
+    add(buttonWithLabel1);
 }
 
 void ChargingScreenViewBase::setupScreen()
 {
 
+}
+
+void ChargingScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttonWithLabel1)
+    {
+        //Interaction1
+        //When buttonWithLabel1 clicked change screen to FullyChargedScreen
+        //Go to FullyChargedScreen with no screen transition
+        application().gotoFullyChargedScreenScreenNoTransition();
+    }
 }

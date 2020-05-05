@@ -33,12 +33,12 @@ DashboardViewBase::DashboardViewBase() :
     boxWithBorder1_1.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxWithBorder1_1.setBorderSize(5);
 
-    CurrentSpeed.setXY(137, -9);
+    CurrentSpeed.setXY(137, -6);
     CurrentSpeed.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     CurrentSpeed.setLinespacing(0);
     CurrentSpeed.setTypedText(touchgfx::TypedText(T_SINGLEUSEID13));
 
-    mph.setXY(290, 62);
+    mph.setXY(290, 65);
     mph.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     mph.setLinespacing(0);
     mph.setTypedText(touchgfx::TypedText(T_SINGLEUSEID14));
