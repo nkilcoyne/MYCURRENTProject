@@ -31,11 +31,11 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         // malgunbd_19_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);
     case Typography::TYPOGRAPHY_04:
-        // malgunbd_94_4bpp
+        // malgunbd_90_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[6]);
     case Typography::TYPOGRAPHY_05:
-        // malgunbd_20_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
+        // malgunbd_19_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);
     case Typography::TYPOGRAPHY_06:
         // malgunbd_13_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
@@ -45,6 +45,18 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::TYPOGRAPHY_08:
         // malgunbd_12_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[9]);
+    case Typography::TYPOGRAPHY_09:
+        // malgunbd_22_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[10]);
+    case Typography::TYPOGRAPHY_10:
+        // malgunbd_18_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[11]);
+    case Typography::TYPOGRAPHY_11:
+        // malgunbd_13_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
+    case Typography::TYPOGRAPHY_12:
+        // malgunbd_24_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[12]);
     default:
         return 0;
     }

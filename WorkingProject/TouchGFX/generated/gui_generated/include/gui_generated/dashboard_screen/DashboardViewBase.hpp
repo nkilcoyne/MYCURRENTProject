@@ -15,6 +15,8 @@
 #include <touchgfx/containers/progress_indicators/BoxProgress.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
 #include <touchgfx/containers/progress_indicators/ImageProgress.hpp>
+#include <touchgfx/widgets/RadioButton.hpp>
+#include <touchgfx/widgets/RadioButtonGroup.hpp>
 
 class DashboardViewBase : public touchgfx::View<DashboardPresenter>
 {
@@ -40,22 +42,29 @@ protected:
     touchgfx::PainterRGB888Bitmap circleProgress1Painter;
     touchgfx::TextArea BatteryStatus;
     touchgfx::BoxProgress boxProgress1;
-    touchgfx::CircleProgress circleProgress2;
-    touchgfx::PainterRGB888Bitmap circleProgress2Painter;
+    touchgfx::CircleProgress RPM;
+    touchgfx::PainterRGB888Bitmap RPMPainter;
     touchgfx::BoxProgress BrakeProgress;
     touchgfx::TextArea rpmLabel;
-    touchgfx::TextArea brakingLabel;
-    touchgfx::TextArea gasLabel;
     touchgfx::TextArea textArea1;
     touchgfx::BoxWithBorder boxWithBorder1_1_1;
     touchgfx::TextArea Current;
     touchgfx::DigitalClock time;
-    touchgfx::TextArea TimeLabel;
     touchgfx::TextArea StopwatchLabel;
     touchgfx::ImageProgress MotorTemperature;
     touchgfx::ImageProgress CellTemperature;
     touchgfx::TextArea MotorTempLabel;
     touchgfx::TextArea CellTempLabel;
+    touchgfx::TextArea textArea2;
+    touchgfx::TextArea rpmLabel2;
+    touchgfx::TextArea textArea3;
+    touchgfx::RadioButton radioButton1;
+    touchgfx::RadioButton radioButton1_1;
+    touchgfx::TextArea startText;
+    touchgfx::TextArea resetText;
+    touchgfx::BoxWithBorder boxWithBorder1_1_1_1;
+    touchgfx::TextArea stopwatchTime;
+    touchgfx::RadioButtonGroup<2> radioButtonGroup1;
 
 private:
 

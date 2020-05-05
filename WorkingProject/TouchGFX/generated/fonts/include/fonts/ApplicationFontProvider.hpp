@@ -20,6 +20,10 @@ struct Typography
     static const touchgfx::FontId TYPOGRAPHY_06 = 9;
     static const touchgfx::FontId TYPOGRAPHY_07 = 10;
     static const touchgfx::FontId TYPOGRAPHY_08 = 11;
+    static const touchgfx::FontId TYPOGRAPHY_09 = 12;
+    static const touchgfx::FontId TYPOGRAPHY_10 = 13;
+    static const touchgfx::FontId TYPOGRAPHY_11 = 14;
+    static const touchgfx::FontId TYPOGRAPHY_12 = 15;
 };
 
 struct TypographyFontIndex
@@ -31,12 +35,16 @@ struct TypographyFontIndex
     static const touchgfx::FontId TYPOGRAPHY_01 = 3; // malgunbd_15_4bpp
     static const touchgfx::FontId TYPOGRAPHY_02 = 4; // gadugib_100_4bpp
     static const touchgfx::FontId TYPOGRAPHY_03 = 5; // malgunbd_19_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_04 = 6; // malgunbd_94_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_05 = 0; // malgunbd_20_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_04 = 6; // malgunbd_90_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_05 = 5; // malgunbd_19_4bpp
     static const touchgfx::FontId TYPOGRAPHY_06 = 7; // malgunbd_13_4bpp
     static const touchgfx::FontId TYPOGRAPHY_07 = 8; // malgunbd_16_4bpp
     static const touchgfx::FontId TYPOGRAPHY_08 = 9; // malgunbd_12_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 10;
+    static const touchgfx::FontId TYPOGRAPHY_09 = 10; // malgunbd_22_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_10 = 11; // malgunbd_18_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_11 = 7; // malgunbd_13_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_12 = 12; // malgunbd_24_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 13;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

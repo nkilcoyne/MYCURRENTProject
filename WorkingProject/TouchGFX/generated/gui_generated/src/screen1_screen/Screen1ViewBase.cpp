@@ -5,7 +5,6 @@
 #include <touchgfx/Color.hpp>
 #include "BitmapDatabase.hpp"
 #include <texts/TextKeysAndLanguages.hpp>
-#include "stm32f7xx_hal.h"
 
 Screen1ViewBase::Screen1ViewBase() :
     switchToDashCounter(0),
@@ -92,7 +91,6 @@ void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCo
         //SwitchToDash
         //When flexButton1 clicked delay
         //Delay for 3000 ms (180 Ticks)
-    	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET); //makes reset light go on
         switchToDashCounter = SWITCHTODASH_DURATION;
     }
 }
