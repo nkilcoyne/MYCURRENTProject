@@ -5,14 +5,7 @@
 FONT_TABLE_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::GlyphNode glyphs_malgunbd_16_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE =
 {
-    {     0, 0x0020,   0,   0,   0,   0,   6,   0,   0, 0x00 },
-    {     0, 0x003F,   7,  12,  12,   0,   7,   0,   0, 0x00 },
-    {    48, 0x0041,  11,  12,  12,   0,  11,   0,   1, 0x00 },
-    {   120, 0x004D,  14,  12,  12,   1,  15,   0,   0, 0x00 },
-    {   204, 0x004F,  12,  12,  12,   0,  12,   0,   0, 0x00 },
-    {   276, 0x0052,  10,  12,  12,   1,  10,   0,   0, 0x00 },
-    {   336, 0x0053,   9,  12,  12,   0,   9,   0,   0, 0x00 },
-    {   396, 0x0054,  10,  12,  12,   0,   9,   1,   1, 0x00 }
+    {     0, 0x003F,   7,  12,  12,   0,   7,   0,   0, 0x00 }
 };
 
 // malgunbd_16_4bpp
@@ -27,6 +20,6 @@ touchgfx::GeneratedFont& getFont_malgunbd_16_4bpp();
 
 touchgfx::GeneratedFont& getFont_malgunbd_16_4bpp()
 {
-    static touchgfx::GeneratedFont malgunbd_16_4bpp(glyphs_malgunbd_16_4bpp, 8, 16, 0, 4, 1, 0, 1, unicodes_malgunbd_16_4bpp, kerning_malgunbd_16_4bpp, 63, 0, 0);
+    static touchgfx::GeneratedFont malgunbd_16_4bpp(glyphs_malgunbd_16_4bpp, 1, 16, 0, 4, 1, 0, 0, unicodes_malgunbd_16_4bpp, kerning_malgunbd_16_4bpp, 63, 0, 0);
     return malgunbd_16_4bpp;
 }

@@ -30,7 +30,7 @@
           },
           {
             "Filename": "gamecockLogo.png",
-            "Alpha": 15,
+            "Alpha": 46,
             "ScalingAlgorithm": "Nearest-neighbor",
             "Name": "GamecockLogo",
             "X": 123,
@@ -54,7 +54,7 @@
             "DisplaySeconds": true,
             "DisplayLeadingZeroForHourIndicator": true,
             "Alpha": 255,
-            "UseAmPm": true,
+            "UseAmPm": false,
             "InitialHour": 10,
             "InitialMinute": 10,
             "InitialSecond": 0,
@@ -82,10 +82,10 @@
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "holdFoot",
-            "X": 128,
-            "Y": 29,
-            "Width": 225,
-            "Height": 27,
+            "X": 113,
+            "Y": 35,
+            "Width": 255,
+            "Height": 30,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -105,10 +105,10 @@
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "TapButton",
-            "X": 101,
-            "Y": 76,
-            "Width": 278,
-            "Height": 26,
+            "X": 79,
+            "Y": 81,
+            "Width": 322,
+            "Height": 30,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -140,79 +140,6 @@
             "Moveable": false
           },
           {
-            "Alpha": 255,
-            "ButtonTrigger": {
-              "Type": "TouchButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "X": 0,
-                "Y": 32,
-                "TextId": "SingleUseId25",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
-                },
-                "ColorPressed": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
-                }
-              },
-              {
-                "Type": "IconButtonStyle",
-                "X": 82,
-                "Y": 4,
-                "Style": "Icon47",
-                "IconReleased": "__designer\\Blue_Icons_Power_32.png",
-                "IconPressed": "__designer\\Blue_Icons_Power_32.png"
-              },
-              {
-                "Type": "BoxWithBorderButtonStyle",
-                "X": 0,
-                "Y": 0,
-                "Width": 198,
-                "Height": 57,
-                "LockToFlexButtonSize": true,
-                "BorderSize": 0,
-                "ColorReleased": {
-                  "Red": 0,
-                  "Green": 153,
-                  "Blue": 204
-                },
-                "ColorPressed": {
-                  "Red": 0,
-                  "Green": 102,
-                  "Blue": 153
-                },
-                "ColorBorderReleased": {
-                  "Red": 0,
-                  "Green": 102,
-                  "Blue": 153
-                },
-                "ColorBorderPressed": {
-                  "Red": 51,
-                  "Green": 102,
-                  "Blue": 153
-                }
-              }
-            ],
-            "Name": "flexButton1",
-            "X": 141,
-            "Y": 125,
-            "Width": 198,
-            "Height": 57,
-            "Type": "FlexButton",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
             "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
             "Alpha": 255,
@@ -230,9 +157,38 @@
             "TextRotation": "0",
             "Style": "Style1",
             "Name": "buttonWithLabel1",
-            "X": 10,
-            "Y": 200,
+            "X": 6,
+            "Y": 207,
             "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId40",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style4",
+            "Name": "buttonWithLabel2",
+            "X": 155,
+            "Y": 123,
+            "Width": 170,
             "Height": 60,
             "Type": "ButtonWithLabel",
             "Visible": true,
@@ -244,41 +200,16 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "SwitchToDash",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "TriggerComponent": "flexButton1",
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Duration": 3000,
-              "Type": "ActionDelay"
-            }
-          },
-          {
-            "InteractionName": "GoToDash",
+            "InteractionName": "Interaction1",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "InteractionToTriggerOn": "SwitchToDash",
-              "Type": "TriggerInteractionCompleted"
+              "TriggerComponent": "buttonWithLabel2",
+              "Type": "TriggerClicked"
             },
             "Action": {
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "South",
               "ActionComponent": "Dashboard",
-              "Type": "ActionGotoScreen"
-            }
-          },
-          {
-            "InteractionName": "Interaction1",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "TriggerComponent": "buttonWithLabel1",
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "ChargingScreen",
               "Type": "ActionGotoScreen"
             }
           }
@@ -332,9 +263,9 @@
                   "Blue": 10
                 },
                 "ColorPressed": {
-                  "Red": 10,
-                  "Green": 10,
-                  "Blue": 10
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
                 }
               },
               {
@@ -359,9 +290,9 @@
                   "Blue": 0
                 },
                 "ColorPressed": {
-                  "Red": 75,
-                  "Green": 0,
-                  "Blue": 0
+                  "Red": 255,
+                  "Green": 172,
+                  "Blue": 172
                 },
                 "ColorBorderReleased": {
                   "Red": 37,
@@ -369,9 +300,9 @@
                   "Blue": 37
                 },
                 "ColorBorderPressed": {
-                  "Red": 0,
-                  "Green": 0,
-                  "Blue": 0
+                  "Red": 255,
+                  "Green": 172,
+                  "Blue": 172
                 }
               }
             ],
@@ -719,8 +650,8 @@
             "DisplaySeconds": true,
             "DisplayLeadingZeroForHourIndicator": true,
             "Alpha": 255,
-            "UseAmPm": true,
-            "InitialHour": 10,
+            "UseAmPm": false,
+            "InitialHour": 7,
             "InitialMinute": 10,
             "InitialSecond": 0,
             "Name": "time",
@@ -1280,34 +1211,6 @@
             "Moveable": false
           },
           {
-            "FileNameProgress": "__designer\\Blue_ProgressIndicators_fill_tiling_progress_indicator_fill_striped_wide_horizontal.png",
-            "AnchorAtZero": false,
-            "Direction": "Right",
-            "Alpha": 255,
-            "Style": "Style5",
-            "FileNameBackground": "__designer\\Blue_ProgressIndicators_bg_large_progress_indicator_bg_square_0_degrees.png",
-            "IndicatorPositionX": 2,
-            "IndicatorPositionY": 2,
-            "IndicatorPositionWidth": 400,
-            "IndicatorPositionHeight": 30,
-            "ProgressRangeMin": 0,
-            "ProgressRangeMax": 100,
-            "ProgressRangeSteps": 0,
-            "ProgressRangeStepsMin": 0,
-            "ProgressInitialValue": 100,
-            "Name": "imageProgress1",
-            "X": 38,
-            "Y": 125,
-            "Width": 404,
-            "Height": 34,
-            "Type": "ImageProgress",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "TextId": "SingleUseId35",
             "TextRotation": "0",
             "Color": {
@@ -1343,7 +1246,7 @@
             "LineSpacing": 0,
             "Name": "textArea2",
             "X": 209,
-            "Y": 168,
+            "Y": 178,
             "Width": 63,
             "Height": 32,
             "Type": "TextArea",
@@ -1458,15 +1361,7 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId22",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId24",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId25",
         "IsResource": false
       },
       {
@@ -1523,6 +1418,14 @@
       },
       {
         "TextEntryId": "SingleUseId39",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId40",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId22",
         "IsResource": false
       }
     ],

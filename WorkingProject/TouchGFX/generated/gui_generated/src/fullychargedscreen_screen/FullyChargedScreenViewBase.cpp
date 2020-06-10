@@ -20,21 +20,12 @@ FullyChargedScreenViewBase::FullyChargedScreenViewBase() :
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     scalableImage1.setAlpha(130);
 
-    imageProgress1.setXY(38, 125);
-    imageProgress1.setProgressIndicatorPosition(2, 2, 400, 30);
-    imageProgress1.setRange(0, 100);
-    imageProgress1.setDirection(touchgfx::AbstractDirectionProgress::RIGHT);
-    imageProgress1.setBackground(touchgfx::Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_BG_LARGE_PROGRESS_INDICATOR_BG_SQUARE_0_DEGREES_ID));
-    imageProgress1.setBitmap(BITMAP_BLUE_PROGRESSINDICATORS_FILL_TILING_PROGRESS_INDICATOR_FILL_STRIPED_WIDE_HORIZONTAL_ID);
-    imageProgress1.setValue(100);
-    imageProgress1.setAnchorAtZero(false);
-
     textArea1.setXY(110, 81);
     textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID35));
 
-    textArea2.setXY(209, 168);
+    textArea2.setXY(209, 178);
     textArea2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID36));
@@ -48,7 +39,6 @@ FullyChargedScreenViewBase::FullyChargedScreenViewBase() :
 
     add(boxWithBorder1);
     add(scalableImage1);
-    add(imageProgress1);
     add(textArea1);
     add(textArea2);
     add(buttonWithLabel1);

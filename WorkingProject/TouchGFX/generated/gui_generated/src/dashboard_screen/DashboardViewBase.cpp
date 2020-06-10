@@ -19,12 +19,12 @@ DashboardViewBase::DashboardViewBase() :
 
     StopVehicle.setBoxWithBorderPosition(0, 0, 104, 52);
     StopVehicle.setBorderSize(3);
-    StopVehicle.setBoxWithBorderColors(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0), touchgfx::Color::getColorFrom24BitRGB(75, 0, 0), touchgfx::Color::getColorFrom24BitRGB(37, 37, 37), touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    StopVehicle.setBoxWithBorderColors(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0), touchgfx::Color::getColorFrom24BitRGB(255, 172, 172), touchgfx::Color::getColorFrom24BitRGB(37, 37, 37), touchgfx::Color::getColorFrom24BitRGB(255, 172, 172));
     StopVehicle.setIconBitmaps(Bitmap(BITMAP_BLUE_ICONS_POWER_32_ID), Bitmap(BITMAP_BLUE_ICONS_POWER_32_ID));
     StopVehicle.setIconXY(37, 4);
     StopVehicle.setText(TypedText(T_SINGLEUSEID20));
     StopVehicle.setTextPosition(0, 32, 104, 52);
-    StopVehicle.setTextColors(touchgfx::Color::getColorFrom24BitRGB(10, 10, 10), touchgfx::Color::getColorFrom24BitRGB(10, 10, 10));
+    StopVehicle.setTextColors(touchgfx::Color::getColorFrom24BitRGB(10, 10, 10), touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     StopVehicle.setPosition(361, 9, 104, 52);
     StopVehicle.setAction(flexButtonCallback);
 
@@ -112,8 +112,8 @@ DashboardViewBase::DashboardViewBase() :
     time.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     time.setTypedText(touchgfx::TypedText(T_SINGLEUSEID22));
     time.displayLeadingZeroForHourIndicator(true);
-    time.setDisplayMode(touchgfx::DigitalClock::DISPLAY_12_HOUR);
-    time.setTime12Hour(10, 10, 0, true);
+    time.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
+    time.setTime24Hour(7, 10, 0);
 
     StopwatchLabel.setXY(375, 128);
     StopwatchLabel.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));

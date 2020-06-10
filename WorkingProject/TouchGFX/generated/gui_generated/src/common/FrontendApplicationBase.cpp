@@ -72,19 +72,6 @@ void FrontendApplicationBase::gotoDashboardScreenCoverTransitionSouthImpl()
     touchgfx::makeTransition<DashboardView, DashboardPresenter, touchgfx::CoverTransition<SOUTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// ChargingScreen
-
-void FrontendApplicationBase::gotoChargingScreenScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoChargingScreenScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoChargingScreenScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<ChargingScreenView, ChargingScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
 // FullyChargedScreen
 
 void FrontendApplicationBase::gotoFullyChargedScreenScreenNoTransition()

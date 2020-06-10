@@ -11,7 +11,14 @@ public:
     virtual ~DashboardView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void handleTickEvent();
 protected:
+    int hours;
+    int minutes;
+    int seconds;
+    bool ampm;
+    int tickCounter;
 };
 
 #endif // DASHBOARDVIEW_HPP

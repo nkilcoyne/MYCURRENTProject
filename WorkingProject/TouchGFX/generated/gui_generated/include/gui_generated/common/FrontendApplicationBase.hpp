@@ -23,9 +23,6 @@ public:
     // Dashboard
     void gotoDashboardScreenCoverTransitionSouth();
 
-    // ChargingScreen
-    void gotoChargingScreenScreenNoTransition();
-
     // FullyChargedScreen
     void gotoFullyChargedScreenScreenNoTransition();
 
@@ -41,9 +38,6 @@ protected:
 
     // Dashboard
     void gotoDashboardScreenCoverTransitionSouthImpl();
-
-    // ChargingScreen
-    void gotoChargingScreenScreenNoTransitionImpl();
 
     // FullyChargedScreen
     void gotoFullyChargedScreenScreenNoTransitionImpl();

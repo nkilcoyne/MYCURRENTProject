@@ -9,7 +9,6 @@
 #include <gui/fullychargedscreen_screen/FullyChargedScreenPresenter.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
-#include <touchgfx/containers/progress_indicators/ImageProgress.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 
@@ -30,7 +29,6 @@ protected:
      */
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ScalableImage scalableImage1;
-    touchgfx::ImageProgress imageProgress1;
     touchgfx::TextArea textArea1;
     touchgfx::TextArea textArea2;
     touchgfx::ButtonWithLabel buttonWithLabel1;

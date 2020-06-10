@@ -7,9 +7,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase() :
-    switchToDashCounter(0),
-    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler),
-    flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
 {
 
     boxWithBorder1.setPosition(0, 0, 480, 272);
@@ -20,21 +18,21 @@ Screen1ViewBase::Screen1ViewBase() :
     GamecockLogo.setBitmap(touchgfx::Bitmap(BITMAP_GAMECOCKLOGO_ID));
     GamecockLogo.setPosition(123, 3, 234, 266);
     GamecockLogo.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-    GamecockLogo.setAlpha(15);
+    GamecockLogo.setAlpha(46);
 
     time.setPosition(349, 237, 119, 23);
     time.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     time.setTypedText(touchgfx::TypedText(T_SINGLEUSEID1));
     time.displayLeadingZeroForHourIndicator(true);
-    time.setDisplayMode(touchgfx::DigitalClock::DISPLAY_12_HOUR);
-    time.setTime12Hour(10, 10, 0, true);
+    time.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
+    time.setTime24Hour(10, 10, 0);
 
-    holdFoot.setXY(128, 29);
+    holdFoot.setXY(113, 35);
     holdFoot.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     holdFoot.setLinespacing(0);
     holdFoot.setTypedText(touchgfx::TypedText(T_SINGLEUSEID2));
 
-    TapButton.setXY(101, 76);
+    TapButton.setXY(79, 81);
     TapButton.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TapButton.setLinespacing(0);
     TapButton.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
@@ -44,23 +42,18 @@ Screen1ViewBase::Screen1ViewBase() :
     TimeLabel.setLinespacing(0);
     TimeLabel.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
 
-    flexButton1.setBoxWithBorderPosition(0, 0, 198, 57);
-    flexButton1.setBorderSize(0);
-    flexButton1.setBoxWithBorderColors(touchgfx::Color::getColorFrom24BitRGB(0, 153, 204), touchgfx::Color::getColorFrom24BitRGB(0, 102, 153), touchgfx::Color::getColorFrom24BitRGB(0, 102, 153), touchgfx::Color::getColorFrom24BitRGB(51, 102, 153));
-    flexButton1.setIconBitmaps(Bitmap(BITMAP_BLUE_ICONS_POWER_32_ID), Bitmap(BITMAP_BLUE_ICONS_POWER_32_ID));
-    flexButton1.setIconXY(82, 4);
-    flexButton1.setText(TypedText(T_SINGLEUSEID25));
-    flexButton1.setTextPosition(0, 32, 198, 57);
-    flexButton1.setTextColors(touchgfx::Color::getColorFrom24BitRGB(10, 10, 10), touchgfx::Color::getColorFrom24BitRGB(10, 10, 10));
-    flexButton1.setPosition(141, 125, 198, 57);
-    flexButton1.setAction(flexButtonCallback);
-
-    buttonWithLabel1.setXY(10, 200);
+    buttonWithLabel1.setXY(6, 207);
     buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonWithLabel1.setLabelText(touchgfx::TypedText(T_SINGLEUSEID37));
     buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    buttonWithLabel1.setAction(buttonCallback);
+
+    buttonWithLabel2.setXY(155, 123);
+    buttonWithLabel2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonWithLabel2.setLabelText(touchgfx::TypedText(T_SINGLEUSEID40));
+    buttonWithLabel2.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    buttonWithLabel2.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    buttonWithLabel2.setAction(buttonCallback);
 
     add(boxWithBorder1);
     add(GamecockLogo);
@@ -68,8 +61,8 @@ Screen1ViewBase::Screen1ViewBase() :
     add(holdFoot);
     add(TapButton);
     add(TimeLabel);
-    add(flexButton1);
     add(buttonWithLabel1);
+    add(buttonWithLabel2);
 }
 
 void Screen1ViewBase::setupScreen()
@@ -77,40 +70,13 @@ void Screen1ViewBase::setupScreen()
 
 }
 
-//Handles delays
-void Screen1ViewBase::handleTickEvent()
-{
-    if(switchToDashCounter > 0)
-    {
-        switchToDashCounter--;
-        if(switchToDashCounter == 0)
-        {
-            //GoToDash
-            //When SwitchToDash completed change screen to Dashboard
-            //Go to Dashboard with screen transition towards South
-            application().gotoDashboardScreenCoverTransitionSouth();
-        }
-    }
-}
-
 void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonWithLabel1)
+    if (&src == &buttonWithLabel2)
     {
         //Interaction1
-        //When buttonWithLabel1 clicked change screen to ChargingScreen
-        //Go to ChargingScreen with no screen transition
-        application().gotoChargingScreenScreenNoTransition();
-    }
-}
-
-void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
-{
-    if (&src == &flexButton1)
-    {
-        //SwitchToDash
-        //When flexButton1 clicked delay
-        //Delay for 3000 ms (180 Ticks)
-        switchToDashCounter = SWITCHTODASH_DURATION;
+        //When buttonWithLabel2 clicked change screen to Dashboard
+        //Go to Dashboard with screen transition towards South
+        application().gotoDashboardScreenCoverTransitionSouth();
     }
 }

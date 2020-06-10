@@ -11,7 +11,6 @@
 #include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
@@ -20,7 +19,6 @@ public:
     Screen1ViewBase();
     virtual ~Screen1ViewBase() {}
     virtual void setupScreen();
-    virtual void handleTickEvent();
 
 protected:
     FrontendApplication& application() {
@@ -36,28 +34,20 @@ protected:
     touchgfx::TextArea holdFoot;
     touchgfx::TextArea TapButton;
     touchgfx::TextArea TimeLabel;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::TouchButtonTrigger > > > flexButton1;
     touchgfx::ButtonWithLabel buttonWithLabel1;
+    touchgfx::ButtonWithLabel buttonWithLabel2;
 
 private:
-
-    /*
-     * Delay Variable Declarations
-     */
-    static const uint16_t SWITCHTODASH_DURATION = 180;
-    uint16_t switchToDashCounter;
 
     /*
      * Callback Declarations
      */
     touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&> buttonCallback;
-    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
-    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 
