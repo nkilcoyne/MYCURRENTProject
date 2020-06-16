@@ -46,6 +46,9 @@
     THE SOFTWARE.
 */
 #include "mcp_can.h"
+#include "Serial.h"
+
+SerialClass Serial;
 
 #define spi_readwrite      pSPI->transfer
 #define spi_read()         spi_readwrite(0x00)
