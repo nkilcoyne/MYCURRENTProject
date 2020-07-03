@@ -9,7 +9,10 @@
 #include <mvp/MVPHeap.hpp>
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <touchgfx/transitions/CoverTransition.hpp>
+#include <touchgfx/transitions/SlideTransition.hpp>
 #include <touchgfx/transitions/CoverTransition.hpp>
+
+
 
 
 
@@ -24,6 +27,8 @@
 #include <gui/chargingscreen_screen/ChargingScreenPresenter.hpp>
 #include <gui/fullychargedscreen_screen/FullyChargedScreenView.hpp>
 #include <gui/fullychargedscreen_screen/FullyChargedScreenPresenter.hpp>
+#include <gui/settingsscreen_screen/SettingsScreenView.hpp>
+#include <gui/settingsscreen_screen/SettingsScreenPresenter.hpp>
 
 
 /**
@@ -50,7 +55,8 @@ public:
             touchgfx::meta::TypeList< DashboardView,
             touchgfx::meta::TypeList< ChargingScreenView,
             touchgfx::meta::TypeList< FullyChargedScreenView,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::TypeList< SettingsScreenView,
+            touchgfx::meta::Nil > > > >
             > GeneratedViewTypes;
 
     /**
@@ -66,7 +72,8 @@ public:
             touchgfx::meta::TypeList< DashboardPresenter,
             touchgfx::meta::TypeList< ChargingScreenPresenter,
             touchgfx::meta::TypeList< FullyChargedScreenPresenter,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::TypeList< SettingsScreenPresenter,
+            touchgfx::meta::Nil > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -80,8 +87,9 @@ public:
      */
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
             touchgfx::meta::TypeList< CoverTransition<SOUTH>,
+            touchgfx::meta::TypeList< SlideTransition<WEST>,
             touchgfx::meta::TypeList< CoverTransition<NORTH>,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::Nil > > >
             > GeneratedTransitionTypes;
 
     /**

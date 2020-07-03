@@ -17,6 +17,8 @@
 #include <gui/chargingscreen_screen/ChargingScreenPresenter.hpp>
 #include <gui/fullychargedscreen_screen/FullyChargedScreenView.hpp>
 #include <gui/fullychargedscreen_screen/FullyChargedScreenPresenter.hpp>
+#include <gui/settingsscreen_screen/SettingsScreenView.hpp>
+#include <gui/settingsscreen_screen/SettingsScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -72,6 +74,19 @@ void FrontendApplicationBase::gotoDashboardScreenCoverTransitionSouthImpl()
     touchgfx::makeTransition<DashboardView, DashboardPresenter, touchgfx::CoverTransition<SOUTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
+// ChargingScreen
+
+void FrontendApplicationBase::gotoChargingScreenScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoChargingScreenScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoChargingScreenScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<ChargingScreenView, ChargingScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 // FullyChargedScreen
 
 void FrontendApplicationBase::gotoFullyChargedScreenScreenNoTransition()
@@ -83,4 +98,17 @@ void FrontendApplicationBase::gotoFullyChargedScreenScreenNoTransition()
 void FrontendApplicationBase::gotoFullyChargedScreenScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<FullyChargedScreenView, FullyChargedScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// SettingsScreen
+
+void FrontendApplicationBase::gotoSettingsScreenScreenSlideTransitionWest()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSettingsScreenScreenSlideTransitionWestImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoSettingsScreenScreenSlideTransitionWestImpl()
+{
+    touchgfx::makeTransition<SettingsScreenView, SettingsScreenPresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

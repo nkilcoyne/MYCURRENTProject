@@ -17,22 +17,23 @@ class SPIClass {
 public:
   inline static byte transfer(byte _data);
   // SPI Configuration methods
-  inline static void attachInterrupt();
-  inline static void detachInterrupt(); // Default
+  //inline static void attachInterrupt();
+  //inline static void detachInterrupt(); // Default
   static void begin(); // Default
-  static void end();
-  static void setBitOrder(uint8_t);
-  static void setDataMode(uint8_t);
-  static void setClockDivider(uint8_t);
+  //static void end();
+  //static void setBitOrder(uint8_t);
+  //static void setDataMode(uint8_t);
+  //static void setClockDivider(uint8_t);
 };
 extern SPIClass SPI;
-byte SPIClass::transfer(byte _data) {  //fill in from research
-	return 0;
+byte SPIClass::transfer(byte _data) {  //fill in from "stm32f7xx_hal_spi.c" -> inside Drivers > STM... > Src
+
 }
-void SPIClass::attachInterrupt() {  //fill in from research
+/*void SPIClass::attachInterrupt() {  //fill in from research
 
 }
 void SPIClass::detachInterrupt() {  //fill in from research
 
 }
+*/
 #endif

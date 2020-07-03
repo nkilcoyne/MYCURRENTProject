@@ -23,8 +23,14 @@ public:
     // Dashboard
     void gotoDashboardScreenCoverTransitionSouth();
 
+    // ChargingScreen
+    void gotoChargingScreenScreenNoTransition();
+
     // FullyChargedScreen
     void gotoFullyChargedScreenScreenNoTransition();
+
+    // SettingsScreen
+    void gotoSettingsScreenScreenSlideTransitionWest();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -39,8 +45,14 @@ protected:
     // Dashboard
     void gotoDashboardScreenCoverTransitionSouthImpl();
 
+    // ChargingScreen
+    void gotoChargingScreenScreenNoTransitionImpl();
+
     // FullyChargedScreen
     void gotoFullyChargedScreenScreenNoTransitionImpl();
+
+    // SettingsScreen
+    void gotoSettingsScreenScreenSlideTransitionWestImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

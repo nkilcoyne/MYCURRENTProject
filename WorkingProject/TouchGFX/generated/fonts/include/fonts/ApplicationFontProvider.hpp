@@ -28,31 +28,33 @@ struct Typography
     static const touchgfx::FontId TYPOGRAPHY_14 = 17;
     static const touchgfx::FontId TYPOGRAPHY_15 = 18;
     static const touchgfx::FontId TYPOGRAPHY_16 = 19;
+    static const touchgfx::FontId TYPOGRAPHY_17 = 20;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId DEFAULT = 0;       // malgunbd_20_4bpp
+    static const touchgfx::FontId DEFAULT = 0;       // FRADM_TTF_20_4bpp
     static const touchgfx::FontId LARGE = 1;         // verdana_40_4bpp
     static const touchgfx::FontId SMALL = 2;         // verdana_10_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_00 = 3; // malgunbd_15_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_01 = 3; // malgunbd_15_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_02 = 4; // gadugib_100_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_03 = 5; // malgunbd_22_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_04 = 6; // malgunbd_90_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_05 = 7; // malgunbd_19_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_06 = 8; // malgunbd_13_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_07 = 9; // malgunbd_16_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_08 = 10; // malgunbd_12_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_09 = 5; // malgunbd_22_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_10 = 11; // malgunbd_18_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_11 = 8; // malgunbd_13_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_12 = 12; // malgunbd_24_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_13 = 12; // malgunbd_24_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_14 = 13; // malgunbd_10_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_15 = 5; // malgunbd_22_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_16 = 14; // malgunbd_21_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 15;
+    static const touchgfx::FontId TYPOGRAPHY_00 = 3; // FRADM_TTF_15_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_01 = 4; // malgunbd_15_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_02 = 5; // gadugib_100_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_03 = 6; // FRADM_TTF_22_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_04 = 7; // malgunbd_90_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_05 = 8; // malgunbd_19_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_06 = 9; // malgunbd_13_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_07 = 10; // malgunbd_16_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_08 = 11; // malgunbd_12_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_09 = 12; // malgunbd_22_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_10 = 13; // malgunbd_18_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_11 = 9; // malgunbd_13_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_12 = 14; // malgunbd_24_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_13 = 14; // malgunbd_24_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_14 = 15; // malgunbd_10_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_15 = 16; // TCB______TTF_22_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_16 = 17; // malgunbd_21_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_17 = 18; // FRADM_TTF_52_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 19;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider
