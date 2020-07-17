@@ -48,9 +48,9 @@
 #ifndef _MCP2515DFS_H_
 #define _MCP2515DFS_H_
 
-#include <Arduino_Compatibility.h>
-//#include <SPI.h>
 #include <inttypes.h>
+#include "main.h"
+#include "Arduino_Compatibility.h"
 
 
 // if print debug information
@@ -412,8 +412,8 @@
 #define MCP_RXBUF_0 (MCP_RXB0SIDH)
 #define MCP_RXBUF_1 (MCP_RXB1SIDH)
 
-#define MCP2515_SELECT()   digitalWrite(SPICS, LOW)
-#define MCP2515_UNSELECT() digitalWrite(SPICS, HIGH)
+#define MCP2515_SELECT()   HAL_GPIO_WritePin(ARDUINO_PWM_CS_D5_GPIO_Port, ARDUINO_PWM_CS_D5_Pin, GPIO_PIN_RESET)
+#define MCP2515_UNSELECT() HAL_GPIO_WritePin(ARDUINO_PWM_CS_D5_GPIO_Port, ARDUINO_PWM_CS_D5_Pin, GPIO_PIN_SET)
 
 #define MCP2515_OK         (0)
 #define MCP2515_FAIL       (1)

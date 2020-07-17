@@ -59,7 +59,6 @@ class MCP_CAN {
     // either extended (the 29 LSB) or standard (the 11 LSB)
     unsigned long  can_id;                  // can id
     byte   rtr;                             // rtr
-    byte   SPICS;
     SPIClass* pSPI;
     byte   nReservedTx;                     // Count of tx buffers for reserved send
     byte   mcpMode;                         // Current controller mode

@@ -47,6 +47,7 @@
 */
 #include "mcp_can.h"
 #include "Serial.h"
+#include "SPI.h"
 
 SerialClass Serial;
 
@@ -934,20 +935,15 @@ byte MCP_CAN::mcp2515_getNextFreeTXBuf(byte* txbuf_n) {               // get Nex
 ** Function name:           MCP_CAN
 ** Descriptions:            Constructor
 *********************************************************************************************************/
-MCP_CAN::MCP_CAN(byte _CS) : nReservedTx(0) {
-    pSPI = &SPI; init_CS(_CS);
+MCP_CAN::MCP_CAN() : nReservedTx(0) {
+    pSPI = &SPI; init_CS();
 }
 
 /*********************************************************************************************************
 ** Function name:           init_CS
-** Descriptions:            init CS pin and set UNSELECTED
+** Descriptions:            set UNSELECTED
 *********************************************************************************************************/
-void MCP_CAN::init_CS(byte _CS) {
-    if (_CS == 0) {
-        return;
-    }
-    SPICS = _CS;
-    pinMode(SPICS, OUTPUT);
+void MCP_CAN::init_CS() {
     MCP2515_UNSELECT();
 }
 
