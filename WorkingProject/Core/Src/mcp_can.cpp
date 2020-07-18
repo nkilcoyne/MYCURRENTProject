@@ -935,7 +935,7 @@ byte MCP_CAN::mcp2515_getNextFreeTXBuf(byte* txbuf_n) {               // get Nex
 ** Function name:           MCP_CAN
 ** Descriptions:            Constructor
 *********************************************************************************************************/
-MCP_CAN::MCP_CAN() : nReservedTx(0) {
+MCP_CAN::MCP_CAN() {
     pSPI = &SPI; init_CS();
 }
 

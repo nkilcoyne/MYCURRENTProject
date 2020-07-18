@@ -4,9 +4,11 @@
  *  Created on: Jul 10, 2020
  *      Author: Nathan
  */
-#include "SPI.h"
 #include "stm32f7xx_hal.h"
 #include "stm32f7xx_hal_spi.h"
+
+#include "SPI.h"
+
 
 extern SPI_HandleTypeDef hspi2;
 

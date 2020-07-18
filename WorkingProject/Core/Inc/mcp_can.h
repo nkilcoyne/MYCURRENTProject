@@ -118,8 +118,8 @@ class MCP_CAN {
     byte sendMsg(unsigned long id, byte ext, byte rtrBit, byte len, const byte* buf, bool wait_sent = true); // send message
 
   public:
-    MCP_CAN(byte _CS = 0);
-    void init_CS(byte _CS);                      // define CS after construction before begin()
+    MCP_CAN();
+    void init_CS();                      // define CS after construction before begin()
     void setSPI(SPIClass* _pSPI) {
         pSPI = _pSPI;    // define SPI port to use before begin()
     }
