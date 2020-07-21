@@ -13,6 +13,8 @@
 
 #include "Arduino_Compatibility.h"
 
+#undef SPI_HAS_TRANSACTION
+
 class SPIClass {
 public:
   byte transfer(byte _data);
