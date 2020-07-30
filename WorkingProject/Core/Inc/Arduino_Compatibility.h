@@ -17,6 +17,11 @@
 #define highByte(w) ((uint8_t) ((w) >> 8))
 #define OUTPUT 0x1
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 typedef uint8_t byte;
 unsigned long millis(void);
 unsigned long micros(void);
@@ -25,6 +30,9 @@ void delay(unsigned long ms);
 void delayMicroseconds(unsigned int us);
 void pinMode(uint8_t pin, uint8_t mode);
 
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 
 

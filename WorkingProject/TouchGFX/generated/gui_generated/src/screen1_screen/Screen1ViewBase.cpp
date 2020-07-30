@@ -5,6 +5,7 @@
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 #include "BitmapDatabase.hpp"
+#include "mcp_can.h"
 
 Screen1ViewBase::Screen1ViewBase() :
     flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
@@ -62,6 +63,9 @@ void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCo
         //OpenUpDashboard
         //When StartButton clicked change screen to Dashboard
         //Go to Dashboard with screen transition towards South
+    	MCP_CAN can;
+    	byte result = can.begin(MCP_16MHz_500kBPS_CFG1, MCP_16MHz);
+
         application().gotoDashboardScreenCoverTransitionSouth();
     }
     else if (&src == &SettingsButton)

@@ -51,6 +51,8 @@
 
 SerialClass Serial;
 
+SPIClass SPI;
+
 #define spi_readwrite      pSPI->transfer
 #define spi_read()         spi_readwrite(0x00)
 #define spi_write(spi_val) spi_readwrite(spi_val)
@@ -952,7 +954,6 @@ void MCP_CAN::init_CS() {
 ** Descriptions:            init can and set speed
 *********************************************************************************************************/
 byte MCP_CAN::begin(byte speedset, const byte clockset) {
-    pSPI->begin();
     byte res = mcp2515_init(speedset, clockset);
 
     return ((res == MCP2515_OK) ? CAN_OK : CAN_FAILINIT);

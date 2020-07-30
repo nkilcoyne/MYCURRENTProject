@@ -20,6 +20,6 @@ public:
   byte transfer(byte _data);
   void begin(); // Default
 };
-extern SPIClass SPI;
+
 
 #endif
