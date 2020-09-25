@@ -8,11 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
-#include <touchgfx/containers/clock/DigitalClock.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
-#include <touchgfx/EasingEquations.hpp>
-#include <touchgfx/mixins/FadeAnimator.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -30,23 +26,9 @@ protected:
      * Member Declarations
      */
     touchgfx::BoxWithBorder boxWithBorder1;
-    touchgfx::DigitalClock time;
-    touchgfx::TextArea TapButton;
-    touchgfx::TextArea TimeLabel;
-    touchgfx::FadeAnimator< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger > > StartButton;
-    touchgfx::IconButtonStyle< touchgfx::ClickButtonTrigger > SettingsButton;
+    touchgfx::TextArea textArea1;
 
 private:
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

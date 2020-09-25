@@ -8,27 +8,11 @@
 #include <common/Partition.hpp>
 #include <mvp/MVPHeap.hpp>
 #include <touchgfx/transitions/NoTransition.hpp>
-#include <touchgfx/transitions/CoverTransition.hpp>
-#include <touchgfx/transitions/SlideTransition.hpp>
-#include <touchgfx/transitions/CoverTransition.hpp>
-
-
-
-
-
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
-#include <gui/dashboard_screen/DashboardView.hpp>
-#include <gui/dashboard_screen/DashboardPresenter.hpp>
-#include <gui/chargingscreen_screen/ChargingScreenView.hpp>
-#include <gui/chargingscreen_screen/ChargingScreenPresenter.hpp>
-#include <gui/fullychargedscreen_screen/FullyChargedScreenView.hpp>
-#include <gui/fullychargedscreen_screen/FullyChargedScreenPresenter.hpp>
-#include <gui/settingsscreen_screen/SettingsScreenView.hpp>
-#include <gui/settingsscreen_screen/SettingsScreenPresenter.hpp>
 
 
 /**
@@ -52,11 +36,7 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< Screen1View,
-            touchgfx::meta::TypeList< DashboardView,
-            touchgfx::meta::TypeList< ChargingScreenView,
-            touchgfx::meta::TypeList< FullyChargedScreenView,
-            touchgfx::meta::TypeList< SettingsScreenView,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::Nil
             > GeneratedViewTypes;
 
     /**
@@ -69,11 +49,7 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< Screen1Presenter,
-            touchgfx::meta::TypeList< DashboardPresenter,
-            touchgfx::meta::TypeList< ChargingScreenPresenter,
-            touchgfx::meta::TypeList< FullyChargedScreenPresenter,
-            touchgfx::meta::TypeList< SettingsScreenPresenter,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::Nil
             > GeneratedPresenterTypes;
 
     /**
@@ -86,10 +62,7 @@ public:
      * @note All transition types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
-            touchgfx::meta::TypeList< CoverTransition<SOUTH>,
-            touchgfx::meta::TypeList< SlideTransition<WEST>,
-            touchgfx::meta::TypeList< CoverTransition<NORTH>,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::Nil
             > GeneratedTransitionTypes;
 
     /**

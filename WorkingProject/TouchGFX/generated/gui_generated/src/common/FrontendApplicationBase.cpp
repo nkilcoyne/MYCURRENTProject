@@ -11,14 +11,6 @@
 #include<platform/driver/lcd/LCD24bpp.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
-#include <gui/dashboard_screen/DashboardView.hpp>
-#include <gui/dashboard_screen/DashboardPresenter.hpp>
-#include <gui/chargingscreen_screen/ChargingScreenView.hpp>
-#include <gui/chargingscreen_screen/ChargingScreenPresenter.hpp>
-#include <gui/fullychargedscreen_screen/FullyChargedScreenView.hpp>
-#include <gui/fullychargedscreen_screen/FullyChargedScreenPresenter.hpp>
-#include <gui/settingsscreen_screen/SettingsScreenView.hpp>
-#include <gui/settingsscreen_screen/SettingsScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -48,67 +40,4 @@ void FrontendApplicationBase::gotoScreen1ScreenNoTransition()
 void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-void FrontendApplicationBase::gotoScreen1ScreenCoverTransitionNorth()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen1ScreenCoverTransitionNorthImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoScreen1ScreenCoverTransitionNorthImpl()
-{
-    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::CoverTransition<NORTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// Dashboard
-
-void FrontendApplicationBase::gotoDashboardScreenCoverTransitionSouth()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoDashboardScreenCoverTransitionSouthImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoDashboardScreenCoverTransitionSouthImpl()
-{
-    touchgfx::makeTransition<DashboardView, DashboardPresenter, touchgfx::CoverTransition<SOUTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// ChargingScreen
-
-void FrontendApplicationBase::gotoChargingScreenScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoChargingScreenScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoChargingScreenScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<ChargingScreenView, ChargingScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// FullyChargedScreen
-
-void FrontendApplicationBase::gotoFullyChargedScreenScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFullyChargedScreenScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoFullyChargedScreenScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<FullyChargedScreenView, FullyChargedScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// SettingsScreen
-
-void FrontendApplicationBase::gotoSettingsScreenScreenSlideTransitionWest()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSettingsScreenScreenSlideTransitionWestImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoSettingsScreenScreenSlideTransitionWestImpl()
-{
-    touchgfx::makeTransition<SettingsScreenView, SettingsScreenPresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

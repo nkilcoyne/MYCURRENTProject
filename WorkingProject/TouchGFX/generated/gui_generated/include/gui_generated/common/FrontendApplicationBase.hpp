@@ -18,20 +18,6 @@ public:
     // Screen1
     void gotoScreen1ScreenNoTransition();
 
-    void gotoScreen1ScreenCoverTransitionNorth();
-
-    // Dashboard
-    void gotoDashboardScreenCoverTransitionSouth();
-
-    // ChargingScreen
-    void gotoChargingScreenScreenNoTransition();
-
-    // FullyChargedScreen
-    void gotoFullyChargedScreenScreenNoTransition();
-
-    // SettingsScreen
-    void gotoSettingsScreenScreenSlideTransitionWest();
-
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -39,20 +25,6 @@ protected:
 
     // Screen1
     void gotoScreen1ScreenNoTransitionImpl();
-
-    void gotoScreen1ScreenCoverTransitionNorthImpl();
-
-    // Dashboard
-    void gotoDashboardScreenCoverTransitionSouthImpl();
-
-    // ChargingScreen
-    void gotoChargingScreenScreenNoTransitionImpl();
-
-    // FullyChargedScreen
-    void gotoFullyChargedScreenScreenNoTransitionImpl();
-
-    // SettingsScreen
-    void gotoSettingsScreenScreenSlideTransitionWestImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

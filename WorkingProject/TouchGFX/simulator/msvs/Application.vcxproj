@@ -23,18 +23,6 @@
     <ClCompile Include="..\..\gui\src\screen1_screen\Screen1Presenter.cpp"/>
     <ClCompile Include="..\..\gui\src\screen1_screen\Screen1View.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\chargingscreen_screen\ChargingScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\chargingscreen_screen\ChargingScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\chargingscreen_screen\ChargingScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\dashboard_screen\DashboardPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\dashboard_screen\DashboardView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\dashboard_screen\DashboardViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\fullychargedscreen_screen\FullyChargedScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\fullychargedscreen_screen\FullyChargedScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\fullychargedscreen_screen\FullyChargedScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -185,18 +173,6 @@
     <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1View.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\chargingscreen_screen\ChargingScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\chargingscreen_screen\ChargingScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\chargingscreen_screen\ChargingScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\dashboard_screen\DashboardPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\dashboard_screen\DashboardView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\dashboard_screen\DashboardViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\fullychargedscreen_screen\FullyChargedScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\fullychargedscreen_screen\FullyChargedScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\fullychargedscreen_screen\FullyChargedScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

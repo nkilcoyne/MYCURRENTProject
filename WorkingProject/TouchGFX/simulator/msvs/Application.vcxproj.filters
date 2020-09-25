@@ -172,54 +172,6 @@
     <Filter Include="Header Files\generated\gui_generated\common">
       <UniqueIdentifier>41B97A88-A457-1FE7-B331-9BDCC00209F7</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\chargingscreen_screen">
-      <UniqueIdentifier>B230F349-5669-2A1A-9446-0ECFF5DF4F9D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\chargingscreen_screen">
-      <UniqueIdentifier>C5647B4A-5CD9-5E1A-208C-8AA907E51F38</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\chargingscreen_screen">
-      <UniqueIdentifier>E0EFF281-CE4B-E992-64DC-B4F031519C9B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\chargingscreen_screen">
-      <UniqueIdentifier>BD2ABA18-2CC3-A181-C140-8EC30BB98E01</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\dashboard_screen">
-      <UniqueIdentifier>099FA51E-74A1-F838-8409-28C1512306D6</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\dashboard_screen">
-      <UniqueIdentifier>C666B023-1270-A071-F471-610CFA5C807C</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\dashboard_screen">
-      <UniqueIdentifier>538401CC-87DF-BB08-2579-091F891726C6</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\dashboard_screen">
-      <UniqueIdentifier>A3E494D1-E70D-846D-45C8-AED2014ACAE0</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\fullychargedscreen_screen">
-      <UniqueIdentifier>6A2DD7B3-9CF8-EF0B-4A55-24FC01CED85B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\fullychargedscreen_screen">
-      <UniqueIdentifier>2CDC64AC-7634-BAF4-C623-91F95CE0AD1C</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\fullychargedscreen_screen">
-      <UniqueIdentifier>2496D1D3-3B7D-B144-EE41-BB7951A2AF69</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\fullychargedscreen_screen">
-      <UniqueIdentifier>AA7993F3-7504-709A-E4F1-24BC221A29C7</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\settingsscreen_screen">
-      <UniqueIdentifier>445954E8-C134-6BF4-4EF7-48EDE0066A02</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\settingsscreen_screen">
-      <UniqueIdentifier>6B1C9941-5899-B5E4-A5DD-79888CDBC500</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\settingsscreen_screen">
-      <UniqueIdentifier>A9F25DA3-1D78-64B8-E8B8-1C655D80665D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\settingsscreen_screen">
-      <UniqueIdentifier>7D314F50-A414-23DD-BE1E-D61A9A340A76</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -257,42 +209,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\chargingscreen_screen\ChargingScreenPresenter.cpp">
-      <Filter>Source Files\gui\chargingscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\chargingscreen_screen\ChargingScreenView.cpp">
-      <Filter>Source Files\gui\chargingscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\chargingscreen_screen\ChargingScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\chargingscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\dashboard_screen\DashboardPresenter.cpp">
-      <Filter>Source Files\gui\dashboard_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\dashboard_screen\DashboardView.cpp">
-      <Filter>Source Files\gui\dashboard_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\dashboard_screen\DashboardViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\dashboard_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\fullychargedscreen_screen\FullyChargedScreenPresenter.cpp">
-      <Filter>Source Files\gui\fullychargedscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\fullychargedscreen_screen\FullyChargedScreenView.cpp">
-      <Filter>Source Files\gui\fullychargedscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\fullychargedscreen_screen\FullyChargedScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\fullychargedscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp">
-      <Filter>Source Files\gui\settingsscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp">
-      <Filter>Source Files\gui\settingsscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\settingsscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -735,42 +651,6 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
       <Filter>Header Files\generated\gui_generated\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\chargingscreen_screen\ChargingScreenPresenter.hpp">
-      <Filter>Header Files\gui\chargingscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\chargingscreen_screen\ChargingScreenView.hpp">
-      <Filter>Header Files\gui\chargingscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\chargingscreen_screen\ChargingScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\chargingscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\dashboard_screen\DashboardPresenter.hpp">
-      <Filter>Header Files\gui\dashboard_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\dashboard_screen\DashboardView.hpp">
-      <Filter>Header Files\gui\dashboard_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\dashboard_screen\DashboardViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\dashboard_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\fullychargedscreen_screen\FullyChargedScreenPresenter.hpp">
-      <Filter>Header Files\gui\fullychargedscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\fullychargedscreen_screen\FullyChargedScreenView.hpp">
-      <Filter>Header Files\gui\fullychargedscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\fullychargedscreen_screen\FullyChargedScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\fullychargedscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp">
-      <Filter>Header Files\gui\settingsscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp">
-      <Filter>Header Files\gui\settingsscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\settingsscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

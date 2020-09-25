@@ -6,21 +6,13 @@ FONT_TABLE_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::GlyphNode glyphs_malgunbd_13_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE =
 {
     {     0, 0x0020,   0,   0,   0,   0,   5,   0,   0, 0x00 },
-    {     0, 0x002F,   7,  11,  10,  -1,   6,   0,   0, 0x00 },
-    {    44, 0x003F,   6,  10,  10,   0,   6,   0,   0, 0x00 },
-    {    74, 0x004D,  11,  10,  10,   1,  13,   0,   0, 0x00 },
-    {   134, 0x004F,  10,  10,  10,   0,  10,   0,   0, 0x00 },
-    {   184, 0x0050,   7,  10,  10,   1,   8,   0,   0, 0x00 },
-    {   224, 0x0052,   8,  10,  10,   1,   9,   0,   0, 0x00 },
-    {   264, 0x0053,   7,  10,  10,   0,   7,   0,   0, 0x00 },
-    {   304, 0x0054,   8,  10,  10,   0,   8,   0,   0, 0x00 },
-    {   344, 0x0061,   7,   7,   7,   0,   7,   0,   1, 0x00 },
-    {   372, 0x0065,   7,   7,   7,   0,   7,   1,   1, 0x00 },
-    {   400, 0x006F,   8,   7,   7,   0,   8,   2,   1, 0x00 },
-    {   428, 0x0070,   8,  10,   7,   0,   8,   0,   0, 0x00 },
-    {   468, 0x0072,   5,   7,   7,   0,   5,   3,   1, 0x00 },
-    {   489, 0x0073,   6,   7,   7,   0,   6,   4,   1, 0x00 },
-    {   510, 0x0074,   5,   9,   9,   0,   5,   0,   0, 0x00 }
+    {     0, 0x003F,   6,  10,  10,   0,   6,   0,   0, 0x00 },
+    {    30, 0x004D,  11,  10,  10,   1,  13,   0,   0, 0x00 },
+    {    90, 0x004F,  10,  10,  10,   0,  10,   0,   0, 0x00 },
+    {   140, 0x0050,   7,  10,  10,   1,   8,   0,   0, 0x00 },
+    {   180, 0x0052,   8,  10,  10,   1,   9,   0,   0, 0x00 },
+    {   220, 0x0053,   7,  10,  10,   0,   7,   0,   0, 0x00 },
+    {   260, 0x0054,   8,  10,  10,   0,   8,   0,   0, 0x00 }
 };
 
 // malgunbd_13_4bpp
@@ -35,6 +27,6 @@ touchgfx::GeneratedFont& getFont_malgunbd_13_4bpp();
 
 touchgfx::GeneratedFont& getFont_malgunbd_13_4bpp()
 {
-    static touchgfx::GeneratedFont malgunbd_13_4bpp(glyphs_malgunbd_13_4bpp, 16, 13, 3, 4, 1, 1, 0, unicodes_malgunbd_13_4bpp, kerning_malgunbd_13_4bpp, 63, 0, 0);
+    static touchgfx::GeneratedFont malgunbd_13_4bpp(glyphs_malgunbd_13_4bpp, 8, 13, 0, 4, 1, 0, 0, unicodes_malgunbd_13_4bpp, kerning_malgunbd_13_4bpp, 63, 0, 0);
     return malgunbd_13_4bpp;
 }

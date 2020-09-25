@@ -4,11 +4,8 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
-#include "BitmapDatabase.hpp"
-#include "mcp_can.h"
 
-Screen1ViewBase::Screen1ViewBase() :
-    flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
+Screen1ViewBase::Screen1ViewBase()
 {
 
     boxWithBorder1.setPosition(0, 0, 480, 272);
@@ -16,63 +13,16 @@ Screen1ViewBase::Screen1ViewBase() :
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     boxWithBorder1.setBorderSize(5);
 
-    time.setPosition(351, 240, 119, 23);
-    time.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    time.setTypedText(touchgfx::TypedText(T_SINGLEUSEID1));
-    time.displayLeadingZeroForHourIndicator(true);
-    time.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
-    time.setTime24Hour(10, 10, 0);
-
-    TapButton.setXY(32, 20);
-    TapButton.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    TapButton.setLinespacing(0);
-    TapButton.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
-
-    TimeLabel.setXY(385, 222);
-    TimeLabel.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    TimeLabel.setLinespacing(0);
-    TimeLabel.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
-
-    StartButton.setBitmaps(Bitmap(BITMAP_GAMECOCKLOGO_RESIZESAMPLEON_ID), Bitmap(BITMAP_GAMECOCKLOGO_RESIZESAMPLEON_ID));
-    StartButton.setBitmapXY(0, 0);
-    StartButton.setPosition(168, 82, 144, 158);
-    StartButton.setAction(flexButtonCallback);
-
-    SettingsButton.setIconBitmaps(Bitmap(BITMAP_BLUE_ICONS_SETTINGS_48_ID), Bitmap(BITMAP_BLUE_ICONS_SETTINGS_48_ID));
-    SettingsButton.setIconXY(0, 0);
-    SettingsButton.setPosition(8, 216, 48, 48);
-    SettingsButton.setAction(flexButtonCallback);
+    textArea1.setXY(147, 125);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID21));
 
     add(boxWithBorder1);
-    add(time);
-    add(TapButton);
-    add(TimeLabel);
-    add(StartButton);
-    add(SettingsButton);
+    add(textArea1);
 }
 
 void Screen1ViewBase::setupScreen()
 {
 
-}
-
-void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
-{
-    if (&src == &StartButton)
-    {
-        //OpenUpDashboard
-        //When StartButton clicked change screen to Dashboard
-        //Go to Dashboard with screen transition towards South
-    	MCP_CAN can;
-    	byte result = can.begin(MCP_16MHz_500kBPS_CFG1, MCP_16MHz);
-
-        application().gotoDashboardScreenCoverTransitionSouth();
-    }
-    else if (&src == &SettingsButton)
-    {
-        //OpenUpSettings
-        //When SettingsButton clicked change screen to SettingsScreen
-        //Go to SettingsScreen with screen transition towards West
-        application().gotoSettingsScreenScreenSlideTransitionWest();
-    }
 }
