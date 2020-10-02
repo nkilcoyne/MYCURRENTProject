@@ -79,6 +79,9 @@ UART_HandleTypeDef huart6;
 SDRAM_HandleTypeDef hsdram1;
 
 osThreadId defaultTaskHandHandle;
+
+osThreadId UARTTaskHandHandle;
+
 /* USER CODE BEGIN PV */
 static FMC_SDRAM_CommandTypeDef Command;
 /* USER CODE END PV */
@@ -96,6 +99,7 @@ static void MX_I2C3_Init(void);
 static void MX_SPI2_Init(void);
 static void MX_USART6_UART_Init(void);
 void StartDefaultTask(void const * argument);
+void StartUARTTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -179,6 +183,8 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+  osThreadDef(UARTTaskHand, StartUARTTask, osPriorityNormal, 0, 4096);
+  UARTTaskHandHandle = osThreadCreate(osThread(UARTTaskHand), NULL);
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -1003,7 +1009,33 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void StartUARTTask(void const * argument)
+{
+	for(;;)
+	{
+		uint8_t data[1024];
+		memset(data, 0, 1024);
+		HAL_StatusTypeDef overallResult;
+		HAL_StatusTypeDef status = HAL_UART_Receive(&huart6, data, 1024, 10000);
+		if (status == HAL_ERROR)
+		{
+			overallResult = status;
+		}
+		else if (status == HAL_BUSY)
+		{
+			overallResult = status;
+		}
+		else if (status == HAL_TIMEOUT)
+		{
+			overallResult = status;
+		}
+		else if (status == HAL_OK)
+		{
+			overallResult = status;
+		}
+	    osDelay(100);
+	}
+}
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -1020,19 +1052,6 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-	  uint8_t data[1024];
-	      memset(data, 0, 1024);
-	      HAL_StatusTypeDef overallResult;
-	      HAL_StatusTypeDef status = HAL_UART_Receive(&huart6, data, 1024, 10000);
-	      if (status == HAL_ERROR) {
-	        overallResult = status;
-	      } else if (status == HAL_BUSY) {
-	        overallResult = status;
-	      } else if (status == HAL_TIMEOUT) {
-	        overallResult = status;
-	      } else if (status == HAL_OK) {
-	        overallResult = status;
-	      }
     osDelay(1);
   }
   /* USER CODE END 5 */ 
