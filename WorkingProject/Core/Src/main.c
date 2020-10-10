@@ -22,11 +22,11 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "app_touchgfx.h"
-#include <string.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stm32746g_discovery_qspi.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -79,9 +79,7 @@ UART_HandleTypeDef huart6;
 SDRAM_HandleTypeDef hsdram1;
 
 osThreadId defaultTaskHandHandle;
-
-osThreadId UARTTaskHandHandle;
-
+osThreadId uartTaskHandle;
 /* USER CODE BEGIN PV */
 static FMC_SDRAM_CommandTypeDef Command;
 /* USER CODE END PV */
@@ -181,10 +179,12 @@ int main(void)
   osThreadDef(defaultTaskHand, StartDefaultTask, osPriorityNormal, 0, 4096);
   defaultTaskHandHandle = osThreadCreate(osThread(defaultTaskHand), NULL);
 
+  /* definition and creation of uartTask */
+  osThreadDef(uartTask, StartUARTTask, osPriorityNormal, 0, 512);
+  uartTaskHandle = osThreadCreate(osThread(uartTask), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  osThreadDef(UARTTaskHand, StartUARTTask, osPriorityNormal, 0, 512);
-  UARTTaskHandHandle = osThreadCreate(osThread(UARTTaskHand), NULL);
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -1009,8 +1009,38 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTaskHand thread.
+  * @param  argument: Not used 
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void const * argument)
+{
+  /* USER CODE BEGIN 5 */
+  MX_TouchGFX_Process();
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END 5 */ 
+}
+
+/* USER CODE BEGIN Header_StartUARTTask */
+/**
+* @brief Function implementing the uartTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartUARTTask */
 void StartUARTTask(void const * argument)
 {
+  /* USER CODE BEGIN StartUARTTask */
+  /* Infinite loop */
 	for(;;)
 	{
 		uint8_t data[1024];
@@ -1035,26 +1065,7 @@ void StartUARTTask(void const * argument)
 		}
 	    osDelay(100);
 	}
-}
-/* USER CODE END 4 */
-
-/* USER CODE BEGIN Header_StartDefaultTask */
-/**
-  * @brief  Function implementing the defaultTaskHand thread.
-  * @param  argument: Not used 
-  * @retval None
-  */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
-{
-  /* USER CODE BEGIN 5 */
-  MX_TouchGFX_Process();
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END 5 */ 
+  /* USER CODE END StartUARTTask */
 }
 
 /* MPU Configuration */
