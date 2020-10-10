@@ -183,7 +183,7 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  osThreadDef(UARTTaskHand, StartUARTTask, osPriorityNormal, 0, 4096);
+  osThreadDef(UARTTaskHand, StartUARTTask, osPriorityNormal, 0, 512);
   UARTTaskHandHandle = osThreadCreate(osThread(UARTTaskHand), NULL);
   /* USER CODE END RTOS_THREADS */
 
