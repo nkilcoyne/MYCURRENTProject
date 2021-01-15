@@ -4,8 +4,10 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include "BitmapDatabase.hpp"
 
-Screen1ViewBase::Screen1ViewBase()
+Screen1ViewBase::Screen1ViewBase() :
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
 {
 
     boxWithBorder1.setPosition(0, 0, 480, 272);
@@ -13,16 +15,50 @@ Screen1ViewBase::Screen1ViewBase()
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     boxWithBorder1.setBorderSize(5);
 
-    textArea1.setXY(147, 125);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID21));
+    textArea.setPosition(151, 125, 178, 23);
+    textArea.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea.setLinespacing(0);
+    textArea.setTypedText(touchgfx::TypedText(T_SINGLEUSEID21));
+
+    alphabetButton.setXY(49, 27);
+    alphabetButton.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    alphabetButton.setLabelText(touchgfx::TypedText(T_SINGLEUSEID22));
+    alphabetButton.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    alphabetButton.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    alphabetButton.setAction(buttonCallback);
+
+    numberSymbolsButton.setXY(267, 27);
+    numberSymbolsButton.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    numberSymbolsButton.setLabelText(touchgfx::TypedText(T_SINGLEUSEID23));
+    numberSymbolsButton.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    numberSymbolsButton.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    numberSymbolsButton.setAction(buttonCallback);
 
     add(boxWithBorder1);
-    add(textArea1);
+    add(textArea);
+    add(alphabetButton);
+    add(numberSymbolsButton);
 }
 
 void Screen1ViewBase::setupScreen()
 {
 
+}
+
+void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &alphabetButton)
+    {
+        //InteractionAlphabetClicked
+        //When alphabetButton clicked call virtual function
+        //Call alphabetClicked
+        alphabetClicked();
+    }
+    else if (&src == &numberSymbolsButton)
+    {
+        //InteractionNumberSymbolsClicked
+        //When numberSymbolsButton clicked call virtual function
+        //Call numberSymbolsClicked
+        numberSymbolsClicked();
+    }
 }
