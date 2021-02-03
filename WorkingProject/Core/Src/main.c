@@ -25,6 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 #include <stm32746g_discovery_qspi.h>
 #include <string.h>
 /* USER CODE END Includes */
@@ -1041,12 +1042,15 @@ void StartUARTTask(void const * argument)
 {
   /* USER CODE BEGIN StartUARTTask */
   /* Infinite loop */
-	for(;;)
+	memset(messageBuffer, 0, 1024);
+	for(int i = 0;;i++)
 	{
-		uint8_t data[1024];
-		memset(data, 0, 1024);
+		//uint8_t data[1024];
+		//snprintf(messageBuffer, 20, "Success! %d", i);
 		HAL_StatusTypeDef overallResult;
-		HAL_StatusTypeDef status = HAL_UART_Receive(&huart6, data, 1024, 10000);
+		HAL_StatusTypeDef status = HAL_UART_Receive(&huart6, messageBuffer, 1024, 10000);
+		messageBuffer[6] = 0;
+		messageBuffer[0] = '!';
 		if (status == HAL_ERROR)
 		{
 			overallResult = status;
